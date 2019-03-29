@@ -14,6 +14,9 @@ gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "faker"
+  gem "rspec-rails"
+  gem "simplecov", require: false
 end
 
 group :development do
@@ -21,4 +24,10 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
+end
+
+group :test do
+  gem "factory_bot_rails"
+  gem "rails-controller-testing"
+  gem "shoulda-matchers"
 end
