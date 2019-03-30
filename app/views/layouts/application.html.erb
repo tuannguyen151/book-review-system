@@ -9,6 +9,11 @@
       "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload",
       defer: true %>
+    <%= javascript_include_tag "i18n" %>
+    <script>
+      I18n.defaultLocale = "<%= I18n.default_locale %>"
+      I18n.locale = "<%= I18n.locale || I18n.default_locale %>"
+    </script>
   </head>
 
   <body>
