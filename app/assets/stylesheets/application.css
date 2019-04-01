@@ -1,4 +1,15 @@
 /*
+ *= require icomoon/style.css
+ *= require bootstrap.min.css
+ *= require magnific-popup.css
+ *= require jquery-ui.css
+ *= require owl.carousel.min.css
+ *= require owl.theme.default.min.css
+ *= require bootstrap-datepicker.css
+ *= require flaticon/font/flaticon.css
+ *= require aos.css
+ *= require rangeslider.css
+ *= require style.css
  *= require_tree .
  *= require_self
  */

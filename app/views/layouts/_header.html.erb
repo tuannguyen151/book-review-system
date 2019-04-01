@@ -1,0 +1,77 @@
+<div class="navbar-expand-sm fixed-top">
+  <header class="site-navbar container py-0" role="banner">
+    <div class="row align-items-center">
+      <div class="col-6 col-xl-2">
+        <h1 class="mb-0 site-logo">
+          <%= link_to "#", class: "text-white mb-0" do %>
+            <span class="flaticon-books"></span>
+            <%= t ".title1" %>
+            <span class="text-primary"><%= t ".title2" %></span>
+          <% end %>
+        </h1>
+      </div>
+      <div class="col-12 col-md-10 d-none d-xl-block">
+        <nav class="site-navigation position-relative text-right"
+          role="navigation">
+          <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+            <li class="<%= "active" if request.original_url == root_url %>">
+              <%= link_to t(".home"), root_path %>
+            </li>
+            <li class="has-children">
+              <%= link_to t(".book"), "#" %>
+              <ul class="dropdown">
+                <li>
+                  <%= link_to t(".favorite"), "#" %>
+                </li>
+                <li>
+                  <%= link_to t(".reading"), "#" %>
+                </li>
+                <li>
+                  <%= link_to t(".readed"), "#" %>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <%= link_to t(".request_book"), "#" %>
+            </li>
+            <li>
+              <%= link_to t(".contact"), "#" %>
+            </li>
+            <li class="has-children">
+              <%= link_to t(".language") %>
+              <ul class="dropdown">
+                <li>
+                  <%= link_to locale: "en" do %>
+                    <%= image_tag "en.jpg", class: "image-language" %>
+                    <%= t ".english" %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to locale: "vi" do %>
+                    <%= image_tag "vi.jpg", class: "image-language" %>
+                    <%= t ".vietnamese" %>
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+            <li class="ml-xl-3 login">
+              <%= link_to "#" do%>
+                <span class="border-left pl-xl-4"></span>
+                <%= t ".sign_in"%>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to t(".register"), "#" %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="d-inline-block d-xl-none ml-auto py-3 col-6 text-right"
+        id="bottom-header">
+        <a href="#" class="site-menu-toggle js-menu-toggle text-white">
+          <span class="icon-menu h3"></span>
+        </a>
+      </div>
+    </div>
+  </header>
+</div>

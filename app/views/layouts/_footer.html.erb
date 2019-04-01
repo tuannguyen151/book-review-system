@@ -1,0 +1,65 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-9">
+            <h2 class="footer-heading mb-4">
+              <%= t ".about_us" %>
+            </h2>
+            <p>
+              <%= t ".introduce" %><br>
+              <%= t ".address" %><br>
+              <%= t ".telephone" %>
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h2 class="footer-heading mb-4">
+              <%= t ".follow_us" %>
+            </h2>
+            <a href="#" class="pl-0 pr-3">
+              <span class="icon-facebook"></span>
+            </a>
+            <a href="#" class="pl-3 pr-3">
+              <span class="icon-twitter"></span>
+            </a>
+            <a href="#" class="pl-3 pr-3">
+              <span class="icon-instagram"></span>
+            </a>
+            <a href="#" class="pl-3 pr-3">
+              <span class="icon-linkedin"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <%= form_with url: "#", local: true do |f| %>
+          <div class="input-group mb-3">
+            <%= f.text_field :book_name, class: "form-control border-secondary
+              text-white bg-transparent", placeholder: t(".search_book") %>
+            <div class="input-group-append">
+              <%= f.button t(".search"), class: "btn btn-primary text-white" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="row pt-3 mt-3 text-center">
+      <div class="col-md-12">
+        <div class="border-top pt-3">
+          <p>
+            <!-- Link back to Colorlib can't be removed.
+              Template is licensed under CC BY 3.0. -->
+            <%= t ".copyright1" %>
+            <i class="icon-heart" aria-hidden="true"></i>
+            <%= t ".copyright2" %>
+            <%= link_to t(".colorlib"), "https://colorlib.com",
+              target: "_blank" %>
+            <!-- Link back to Colorlib can't be removed.
+              Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
