@@ -1,3 +1,4 @@
+$gray: #ccc;
 $cyan: #30e3ca;
 $red-black: #ff0062;
 $pink-b:#d7ffa9a6;
@@ -50,10 +51,167 @@ $gray: #ccc;
   height: 25px;
 }
 
+
 .alert-notice {
   color: $red-black;
   background-color: $pink-b;
   border-color: $pink-bo;
+  }
+
+.reviews {
+
+  @include background-tile;
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 2em;
+  }
+
+  .review {
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+
+    .review-comment {
+      font-size: 1.05em;
+      line-height: 1.5;
+    }
+
+  }
+
+  .new-review {
+    padding-top: 8px;
+  }
+
+}
+
+
+//book style
+.book-info {
+  @include background-tile;
+    margin:0;
+
+  .book-title {
+    margin-top: 0;
+    font-size: 2em;
+  }
+
+  .avg-rating {
+    font-size: 1.5em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  .number-of-reviews {
+    font-size: 0.85em;
+    font-style: italic;
+  }
+
+  .book-author {
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    span {
+      font-size: 0.80em;
+    }
+  }
+
+  .book-desc {
+    font-size: 1.05em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+}
+
+
+//border image
+
+.image-border{
+    box-sizing: border-box;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  padding: .5em .25em;
+}
+//
+
+
+
+/* Button/link styles */
+
+.btn-custom {
+  color: darken(#f1c40f, 5%);
+  background-color: white;
+  border: 1px solid darken(#f1c40f, 5%);
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  &:hover {
+    text-decoration: none;
+    background-color: darken(#f1c40f, 5%);
+    color: white;
+    transition: 0.5s;
+  }
+}
+
+.links {
+
+  .btn-custom {
+    padding: 3px 10px;
+    font-weight: 300;
+  }
+
+}
+.book-links {
+
+  .btn-custom {
+    padding: 3px 10px;
+    font-weight: 300;
+    margin-top: 40px;
+  }
+
+}
+
+.description{
+  @include background-tile;
+    margin: 20px 0 20px;
+
+}
+
+.btn-custom2 {
+  color: #333;
+  background-color: white;
+  border: 1px solid #222;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  &:hover {
+    text-decoration: none;
+    background-color: #333;
+    color: white;
+    transition: 0.5s;
+  }
+}
+
+/* New/Edit review form styles */
+
+.new-review-form, .edit-review-form {
+  @include background-tile;
+  margin: 20px 0 20px;
+  h1 {
+    margin-top: 0;
+  }
+
+  #rating-form {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+    }
+  }
 }
 
 .icon-marker {

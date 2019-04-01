@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
     resources :books do
       resources :markers, only: %i(create destroy)
+      resources :reviews
     end
     resources :purchase_requests, only: %i(index destroy)
   end

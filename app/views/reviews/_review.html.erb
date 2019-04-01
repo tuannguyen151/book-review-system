@@ -1,0 +1,19 @@
+<div id="reviews-js">
+  <% if review.blank? %>
+    <h3>No reviews just yet, would you like to add the first!</h3>
+  <% else %>
+    <div class="edit_review" >
+      <div class="review-rating" data-score="<%= review.rate %>"><%= review.user.email %></div>
+      <p class="review"><span> <%= review.content %></span></p>
+      <% if user_signed_in? %>
+        <% if review.user_id == current_user.id %>
+        <div class="links btn-group">
+          <%= link_to t(".btn_edit"), edit_book_review_path(review.book, review), class: "btn btn-custom" %>
+          <%= link_to t(".btn_del"), book_review_path(review.book, review), method: :delete,
+              data: { confirm: t(".mess_del") }, class: "btn btn-custom" %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<%= form_for [@book, @book.reviews.build] ,remote: true do |f| %>
+ <a id="my-link">
+  <div id="rating-form" ></div>
+</a>
+  <div id="myDIV" style="display: none">
+    <%= f.text_area :content, class: "form-control animated", cols: "50", rows: "5",
+      id: "new-review" %>
+    <%= f.button :submit, class: "btn-custom2" %>
+  </div>
+<% end %>

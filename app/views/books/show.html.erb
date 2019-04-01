@@ -1,5 +1,6 @@
 <% provide :title, @book.title %>
 <% provide :icon, "icon/books.png"%>
+
 <div class="site-section" id="main-content">
   <div class="container">
     <div class="row mb-5">
@@ -50,23 +51,35 @@
                 <%= @book.number_pages %>
               </p>
               <p class="book-desc"><span><%= t ".price" %></span>
-                <%= @book.price %>
+                <%= t("book_price", price: @book.price) %>
               </p>
+              <h2 class="avg-rating"><%= t ".average_rating" %></h2>
+              <span class="number-of-reviews"><%= @book.reviews.count %><%= t ".reviews" %></span>
+              <div class="average-review-rating" data-score=<%= @average_review %>></div>
+              <span class="number-of-reviews"><%= t ".text_review" %></span>
+              <div class=""><%= render "reviews/form" %></div>
           </div>
         </div>
 
         <div class="row description">
-        <h4 class="h5 mb-4 text-black"><%= t ".description" %></h4>
-
+          <h4 class="h5 mb-4 text-black"><%= t ".description" %></h4>
+          <%= @book.description %>
         </div>
         <div class="row description">
-        <h4 class="h5 mb-4 text-black"><%= t ".comment" %></h4>
-
+          <h4 class="h5 mb-4 text-black"><%= t ".comment" %></h4>
         </div>
         <div class="row"></div>
       </div>
+
       <div class="col-lg-4 ">
-        <div class="reviews">
+        <div class="reviews ">
+        <h1 class="review_title"><%= @book.title %></h1>
+          <div class="row mt-5" id="list-reviews">
+            <%= render @reviews %>
+          </div>
+          <div class="row justify-content-center" id="kaminari-list-reviews">
+            <%= paginate @reviews %>
+          </div>
         </div>
       </div>
     </div>

@@ -165,6 +165,16 @@ vi:
       author: Tác giả
       price: Giá
       edit: Sửa
+    show:
+      number_pages: "Số trang "
+      author: "Tác giả "
+      price: "Giá "
+      description: Mô tả
+      comment: Bình luận
+      average_rating: Xếp hạng trung bình
+      user_of_reviews: Người dùng đánh giá
+      reviews: " đánh giá"
+      text_review: Bạn có đánh giá dưới đây
   users:
     registrations:
       edit:
@@ -227,3 +237,13 @@ vi:
     destroy:
       success: Hủy yêu cầu mua sách thành công
       purchase_request_not_found: Không tìm thấy yêu cầu mua sách
+  reviews:
+    review:
+      btn_edit: Sửa
+      btn_del: Xóa
+      mess: Chưa có đánh giá nào, bạn có muốn đánh giá đầu tiên không!
+      mess_del: Bạn có chắc không?
+  create:
+      create_success: Đánh giá đã được tạo thành công
+      create_failure: Đã xảy ra lỗi khi tạo đánh giá
+  book_price: $%{price}
