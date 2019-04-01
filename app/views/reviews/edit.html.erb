@@ -1,0 +1,20 @@
+<div class="site-section" id="main-content">
+  <div class="container">
+    <center>
+      <div class="col-md-6 col-md-offset-3">
+        <div class="edit-review-form">
+          <h1>Edit Review</h1>
+          <%= form_for([@book, @review]) do |f| %>
+            <div id="rating-form">
+              <label>Rating</label>
+            </div>
+            <%= f.text_area :content, class: "form-control animated", cols: "50", rows: "5",
+            id: "new-review", placeholder: "Enter your review here..."  %>
+            <%= f.button :submit, class: "btn-custom" %>
+            <%= link_to "Back", book_path(@book),class: "btn-custom2" %>
+          <% end %>
+        </div>
+      </div>
+    </center>
+  </div>
+</div>

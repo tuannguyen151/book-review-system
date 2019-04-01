@@ -140,6 +140,10 @@ en:
       price: "Price "
       description: Description
       comment: Comment
+      average_rating: Average Rating
+      user_of_reviews: user of reviews
+      reviews: " reviews"
+      text_review: You have the rating below
     edit:
       not_found: No find book needed edit
       edit_book: Edit book
@@ -165,16 +169,6 @@ en:
       author: Author
       price: Price
       edit: Edit
-    show:
-      number_pages: "Number pages "
-      author: "Author "
-      price: "Price "
-      description: Description
-      comment: Comment
-      average_rating: Average Rating
-      user_of_reviews: user of reviews
-      reviews: " reviews"
-      text_review: You have the rating below
   users:
     registrations:
       edit:

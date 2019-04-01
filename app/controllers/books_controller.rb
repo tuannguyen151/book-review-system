@@ -10,11 +10,12 @@ class BooksController < ApplicationController
 
   def show
     @reviews = Review.where(book_id: @book.id).order_desc.page(params[:page])
-                                              .per Settings.limit_review
+                     .per Settings.limit_review
     if @reviews.blank?
       @average_review = 0
     else
-      @average_review = Review.average(:rate).round(Settings.average_rate)
+      @average_review = Review.where(book_id: @book.id).average(:rate)
+                              .round(Settings.average_rate)
     end
   end
 

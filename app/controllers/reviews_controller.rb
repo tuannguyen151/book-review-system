@@ -3,14 +3,6 @@ class ReviewsController < ApplicationController
   before_action :find_book
   before_action :authenticate_user!, only: %i(new edit create)
 
-  def index
-    @reviews = Review.all
-  end
-
-  def new
-    @review = Review.new
-  end
-
   def create
     @review = Review.new review_params
     @review.user_id = current_user.id
@@ -34,6 +26,14 @@ class ReviewsController < ApplicationController
       redirect_to book_path(@book)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    @review.destroy
+    respond_to do |format|
+      format.html{redirect_to book_path(@book)}
+      format.js{render layout: false}
     end
   end
 
