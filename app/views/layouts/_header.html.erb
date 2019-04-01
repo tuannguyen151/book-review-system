@@ -59,7 +59,7 @@
               <li class="has-children">
                 <%= link_to locale: "en" do %>
                   <%= image_tag "icon/user.png", class: "image-language" %>
-                  <%= current_user.user_profile.name %>
+                  <%= current_user.email %>
                 <% end %>
                 <ul class="dropdown">
                   <li>
@@ -87,7 +87,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to "#" do %>
+                <%= link_to new_user_registration_path do %>
                   <%= t(".register") %>
                 <% end %>
               </li>

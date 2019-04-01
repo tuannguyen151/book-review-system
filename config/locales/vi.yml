@@ -98,3 +98,16 @@ vi:
       number_pages: Số trang
       author: Tác giả
       price: Giá
+  users:
+    registrations:
+      new:
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        characters_minimum: " Tối thiểu 6 ký tự"
+        signup: "Đăng ký"
+    shared:
+      _links:
+        signup: "Đăng ký"
+        login: "Đăng nhập"
+        signin_with: "Đăng nhập với %{OmniAuth::Utils.camelize(provider)}"
+        forgot_your_password: "Quên mật khẩu"
