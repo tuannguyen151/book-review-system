@@ -1,12 +1,14 @@
 class BooksController < ApplicationController
   authorize_resource
   before_action :get_categories, only: %i(index new create edit update)
-  before_action :get_book, only: %i(edit update)
+  before_action :get_book, only: %i(show edit update)
 
   def index
     @books = Book.includes(:category).page(params[:page])
                  .per Settings.book_in_page
   end
+
+  def show; end
 
   def new
     @book = Book.new

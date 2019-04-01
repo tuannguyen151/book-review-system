@@ -1,0 +1,49 @@
+<% provide :title, @book.title %>
+<% provide :icon, "icon/books.png"%>
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-8">
+        <div class="row book-info">
+          <div class="col-lg-4">
+            <div class="mb-4">
+              <div class="col-xs-4 col-image image-border">
+                <div><%= image_tag "img_2.jpg", alt: "Image", class: "img-fluid" %></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8 ml-auto">
+
+              <h2 class="book-title"><%= @book.title %></h2>
+              <h3 class="book-author"><span><%= t ".author" %></span>
+                <%= @book.author %>
+              </h3>
+              <p class="book-desc"><span><%= t ".number_pages" %></span>
+                <%= @book.number_pages %>
+              </p>
+              <p class="book-desc"><span><%= t ".price" %></span>
+                <%= @book.price %>
+              </p>
+          </div>
+        </div>
+
+        <div class="row description">
+        <h4 class="h5 mb-4 text-black"><%= t ".description" %></h4>
+
+        </div>
+        <div class="row description">
+        <h4 class="h5 mb-4 text-black"><%= t ".comment" %></h4>
+
+        </div>
+        <div class="row"></div>
+      </div>
+      <div class="col-lg-4 ">
+        <div class="reviews">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
