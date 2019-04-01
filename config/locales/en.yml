@@ -1,2 +1,44 @@
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      book_review: Book review
+    header:
+      title1: Book
+      title2: Review
+      home: Home
+      book: Book
+      favorite: Favorite
+      reading: Reading
+      readed: Readed
+      request_book: Request buy books
+      contact: Contact
+      sign_in: Sign in
+      register: Register
+      language: Language
+      english: English
+      vietnamese: Vietnamese
+    site_blocks:
+      title: Read, rate and request to buy book
+      maxim: We will create wonderful experience for you!
+      search_content: what are you searching for?
+      can_choose_format: Can choose format
+      search: Search
+    statistical:
+      users: Users
+      books: Books
+      website: Website
+      mobile: Mobile
+      desktop: Desktop
+      orther: Orther..
+      highest_rated: Highest rated
+    footer:
+      about_us: Some information about us
+      introduce: We have a lot of books in the library
+      address: "Address: Ha Noi - Viet Nam"
+      telephone: "Telephone: 0966.666.666"
+      follow_us: Follow Us
+      search_book: Search books...
+      copyright1: Copyright © 2019 All rights reserved | This template
+        is made with
+      copyright2: by
+      colorlib: Colorlib

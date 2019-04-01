@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RubyHtBookReviewSystem</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", media: "all",
-      "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track": "reload",
-      defer: true %>
-    <%= javascript_include_tag "i18n" %>
-    <script>
-      I18n.defaultLocale = "<%= I18n.default_locale %>"
-      I18n.locale = "<%= I18n.locale || I18n.default_locale %>"
-    </script>
+    <title><%= full_title yield :title %></title>
+    <%= favicon_link_tag yield :icon %>
+    <%= render "layouts/head" %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="site-wrap">
+      <div class="site-mobile-menu">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+      <%= render "layouts/header" %>
+      <%= render "layouts/site_blocks" %>
+      <%= render "layouts/statistical" %>
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>

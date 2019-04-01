@@ -1,3 +1,16 @@
+//= require jquery-3.3.1.min.js
+//= require jquery-migrate-3.0.1.min.js
+//= require jquery-ui.js
+//= require popper.min.js
+//= require bootstrap.min.js
+//= require owl.carousel.min.js
+//= require jquery.stellar.min.js
+//= require jquery.countdown.min.js
+//= require jquery.magnific-popup.min.js
+//= require bootstrap-datepicker.min.js
+//= require aos.js
+//= require rangeslider.min.js
+//= require main.js
 //= require autocomplete-rails
 //= require rails-ujs
 //= require ckeditor/init

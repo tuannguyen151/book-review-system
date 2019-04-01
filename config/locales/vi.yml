@@ -1,2 +1,44 @@
 vi:
-  hello: "Xin Chao"
+  layouts:
+    application:
+      book_review: Đánh giá sách
+    header:
+      title1: Đánh giá
+      title2: sách
+      home: Trang chủ
+      book: Sách
+      favorite: Yêu thích
+      reading: Đang đọc
+      readed: Đã đọc
+      request_book: Các yêu cầu mua sách
+      contact: Liên hệ
+      sign_in: Đăng nhập
+      register: Đăng kí
+      language: Ngôn ngữ
+      english: Tiếng anh
+      vietnamese: Tiếng việt
+    site_blocks:
+      title: Đọc, đánh giá và yêu cầu mua sách
+      maxim: Chúng tôi sẽ tạo cảm giác trải nghiệm tuyệt vời cho bạn !
+      search_content: Bạn đang tìm gì vậy?
+      can_choose_format: Có thể chọn định dạng
+      search: Tìm kiếm
+    statistical:
+      users: Người dùng
+      books: Sách
+      website: Website
+      mobile: Di động
+      desktop: Máy tính
+      orther: Khác..
+      highest_rated: Đánh giá cao nhất
+    footer:
+      about_us: Một vài thông tin về chúng tôi
+      introduce: Chúng tôi có rất nhiều sách trong thư viện
+      address: "Địa chỉ: Hà Nội - Việt Nam"
+      telephone: "Điện thoại: 0966.666.666"
+      follow_us: Theo dõi chúng tôi
+      search_book: Tìm kiếm sách ...
+      copyright1: Copyright © 2019 All rights reserved | Mãu này được
+        tạo
+      copyright2: bởi
+      colorlib: Colorlib

@@ -31,5 +31,5 @@
 # Ignore application configuration
 /config/application.yml
 
-# Ignore precompile I18n-js
-/public/javascripts/i18n
+# Ignore public
+/public

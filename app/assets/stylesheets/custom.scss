@@ -1,0 +1,27 @@
+$cyan: #30e3ca;
+$white-transparent: rgba(255, 255, 255, 0.95);
+
+#bg-site-blocks {
+  background-image: url("hero_2.jpg");
+}
+
+#bottom-header {
+  position: relative;
+  top: 3px;
+  padding-right: 30px;
+}
+
+.image-language {
+  height: 30px;
+  width: auto;
+}
+
+.icon .statistical {
+  height: 45px;
+  width: auto;
+  color: $cyan;
+}
+
+.lh-content {
+  background: $white-transparent;
+}
