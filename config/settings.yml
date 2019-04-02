@@ -1,0 +1,4 @@
+name_maximum: 100
+string_maximum: 255
+years: 100
+host: "localhost:3000"
