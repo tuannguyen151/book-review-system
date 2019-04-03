@@ -42,3 +42,25 @@ en:
         is made with
       copyright2: by
       colorlib: Colorlib
+  activerecord:
+    min_date: is too earlier (minimum is %{date})
+    max_date: is too latest (maximum is %{date})
+    number: only numeric format
+    attributes:
+      marker:
+        statuses:
+          favorite: Favorite
+          readed: Readed
+          reading: Reading
+          purchase_request: Purchase request
+          rate_and_review: Rate and review
+      user_profile:
+        genders:
+          male: Male
+          female: Female
+  date:
+    formats:
+      date: "%d/%m/%Y"
+  time:
+    formats:
+      datetime: "%H:%M:%S %d/%m/%y"
