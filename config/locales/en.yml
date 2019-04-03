@@ -74,6 +74,13 @@ en:
         not_found_in_database: Invalid email.
         unconfirmed: You have to confirm your email address before continuing.
         signed_in: Signed in successfully.
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
   home:
     index:
       home_page: Home page

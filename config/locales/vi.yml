@@ -74,6 +74,13 @@ vi:
         not_found_in_database: Email không hợp lệ.
         unconfirmed: Bạn phải xác nhận địa chỉ email của mình trước khi tiếp tục.
         signed_in: Đã đăng nhập thành công.
+  views:
+    pagination:
+      first: "&laquo; Đầu"
+      last: "Cuối &raquo;"
+      previous: "&lsaquo; Truớc"
+      next: "Sau &rsaquo;"
+      truncate: "&hellip;"
   home:
     index:
       home_page: Trang chủ
