@@ -17,6 +17,9 @@ en:
       language: Language
       english: English
       vietnamese: Vietnamese
+      personal_information: Personal information
+      change_password: Change password
+      sign_out: Sign out
     site_blocks:
       title: Read, rate and request to buy book
       maxim: We will create wonderful experience for you!
@@ -64,3 +67,13 @@ en:
   time:
     formats:
       datetime: "%H:%M:%S %d/%m/%y"
+  devise:
+    sessions:
+      user:
+        invalid: Invalid password.
+        not_found_in_database: Invalid email.
+        unconfirmed: You have to confirm your email address before continuing.
+        signed_in: Signed in successfully.
+  home:
+    index:
+      home_page: Home page

@@ -54,15 +54,44 @@
                 </li>
               </ul>
             </li>
-            <li class="ml-xl-3 login">
-              <%= link_to "#" do%>
-                <span class="border-left pl-xl-4"></span>
-                <%= t ".sign_in"%>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to t(".register"), "#" %>
-            </li>
+            <span class="border-left pl-xl-2"></span>
+            <% if user_signed_in? %>
+              <li class="has-children">
+                <%= link_to locale: "en" do %>
+                  <%= image_tag "icon/user.png", class: "image-language" %>
+                  <%= current_user.user_profile.name %>
+                <% end %>
+                <ul class="dropdown">
+                  <li>
+                    <%= link_to "#" do %>
+                      <%= t ".personal_information"%>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to "#" do %>
+                      <%= t ".change_password" %>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to destroy_user_session_path, method: :delete do %>
+                      <%= t ".sign_out" %>
+                    <% end %>
+                  </li>
+                </ul>
+              </li>
+            <% else %>
+              <li class="ml-xl-3 login">
+                <%= link_to "#", data: {toggle: "modal",
+                  target: "#loginModal"} do%>
+                  <%= t ".sign_in"%>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                  <%= t(".register") %>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </nav>
       </div>
