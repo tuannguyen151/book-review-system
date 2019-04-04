@@ -11,5 +11,12 @@ FactoryBot.define do
       sequence(:email){Faker::Internet.email}
       password {"123123"}
     end
+    trait :user_devise do
+      email {"user@gmail.com"}
+      confirmed_at {Time.now}
+    end
+    trait :unconfirm do
+      email {"user1@gmail.com"}
+    end
   end
 end
