@@ -1,0 +1,9 @@
+<% rate[:rate].times do %>
+  <span class="icon-star text-warning"></span>
+<% end %>
+<% rate[:want_rate].times do %>
+  <span class="icon-star text-secondary"></span>
+<% end %>
+<span class="review">
+  (<%= rate[:rate] %> <%= t ".star" %>)
+</span>

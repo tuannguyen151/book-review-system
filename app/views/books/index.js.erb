@@ -1,0 +1,2 @@
+$("#list-books").html("<%= j render @books %>");
+$("#kaminari-list-books").html("<%= j paginate @books, remote: true %>");

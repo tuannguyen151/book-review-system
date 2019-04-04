@@ -1,0 +1,22 @@
+<% provide :title, t(".list_books") %>
+<% provide :icon, "icon/books.png"%>
+<div class="site-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-7 text-left border-primary">
+        <h2 class="font-weight-light text-primary">
+          <%= t ".list_books" %>
+        </h2>
+      </div>
+      <div class="col-md-7 text-left mt-5">
+        <%= render "shared/flash" %>
+      </div>
+    </div>
+    <div class="row mt-5" id="list-books">
+      <%= render @books %>
+    </div>
+    <div class="row justify-content-center" id="kaminari-list-books">
+      <%= paginate @books, remote: true %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="col-lg-6">
+  <div class="d-block d-md-flex listing">
+    <div class="img d-block">
+      <%= image_tag check_image_cover(book), class: "cover-books" %>
+    </div>
+    <div class="lh-content">
+      <span class="category">
+        <%= book.category.name%>
+      </span>
+      <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+      <h3><%= link_to book.title, "#" %></h3>
+      <address class="mb-0">
+        <%= t ".number_pages" %>:
+        <%= book.number_pages %></address>
+      <address class="mb-0">
+        <%= t ".author" %>:
+        <%= book.author %>
+      </address>
+      <address>
+        <%= t ".price" %>:
+        <%= book.price %>
+      </address>
+      <p class="mb-0">
+        <%= render partial: "shared/rate", object: book_rate(book) %>
+      </p>
+    </div>
+  </div>
+</div>
