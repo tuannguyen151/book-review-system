@@ -45,6 +45,9 @@ en:
         is made with
       copyright2: by
       colorlib: Colorlib
+  shared:
+    rate:
+      star: Star
   activerecord:
     min_date: is too earlier (minimum is %{date})
     max_date: is too latest (maximum is %{date})
@@ -88,3 +91,10 @@ en:
     home:
       index:
         home_page: Home page
+  books:
+    index:
+      list_books: List books
+    book:
+      number_pages: Number pages
+      author: Author
+      price: Price
