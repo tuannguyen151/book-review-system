@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "home#index"
     devise_for :users, controllers: {sessions: "users/sessions"}
+    namespace :admin do
+      root "home#index"
+    end
   end
 end
