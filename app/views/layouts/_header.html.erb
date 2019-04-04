@@ -17,20 +17,35 @@
             <li class="<%= "active" if request.original_url == root_url %>">
               <%= link_to t(".home"), root_path %>
             </li>
-            <li class="has-children">
-              <%= link_to t(".book"), books_path %>
-              <ul class="dropdown">
-                <li>
-                  <%= link_to t(".favorite"), "#" %>
+            <% if current_user %>
+              <li class="has-children">
+                <%= link_to t(".book"), books_path %>
+                <% if current_user.admin? %>
+                  <ul class="dropdown">
+                    <li>
+                      <%= link_to t(".create_book"), new_book_path %>
+                    </li>
+                  </ul>
                 </li>
-                <li>
-                  <%= link_to t(".reading"), "#" %>
+                <% else %>
+                  <ul class="dropdown">
+                    <li>
+                      <%= link_to t(".favorite"), "#" %>
+                    </li>
+                    <li>
+                      <%= link_to t(".reading"), "#" %>
+                    </li>
+                    <li>
+                      <%= link_to t(".readed"), "#" %>
+                    </li>
+                  </ul>
                 </li>
-                <li>
-                  <%= link_to t(".readed"), "#" %>
-                </li>
-              </ul>
-            </li>
+                <% end %>
+            <% else %>
+              <li>
+                <%= link_to t(".book"), "#" %>
+              </li>
+            <% end %>
             <li>
               <%= link_to t(".request_book"), "#" %>
             </li>

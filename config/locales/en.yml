@@ -20,6 +20,7 @@ en:
       personal_information: Personal information
       change_password: Change password
       sign_out: Sign out
+      create_book: Create book
     site_blocks:
       title: Read, rate and request to buy book
       maxim: We will create wonderful experience for you!
@@ -46,6 +47,9 @@ en:
       copyright2: by
       colorlib: Colorlib
   shared:
+    error_messages:
+      content1: The form contains
+      content2: error
     rate:
       star: Star
   activerecord:
@@ -94,6 +98,20 @@ en:
   books:
     index:
       list_books: List books
+    new:
+      create_new_book: Create new book
+      create: Create
+      category: Category
+      title: Title
+      cover_image: Cover image
+      publish_date: Publish date
+      number_pages: Number pages
+      price: Price
+      author: Author
+      description: Description
+    create:
+      create_success: The book was successfully created
+      create_failure: An error occurred while creating the book
     book:
       number_pages: Number pages
       author: Author

@@ -20,6 +20,7 @@ vi:
       personal_information: Thông tin cá nhân
       change_password: Đổi mật khẩu
       sign_out: Đăng xuất
+      create_book: Tạo sách
     site_blocks:
       title: Đọc, đánh giá và yêu cầu mua sách
       maxim: Chúng tôi sẽ tạo cảm giác trải nghiệm tuyệt vời cho bạn !
@@ -46,6 +47,9 @@ vi:
       copyright2: bởi
       colorlib: Colorlib
   shared:
+    error_messages:
+      content1: Biểu mẫu có chứa
+      content2: lỗi
     rate:
       star: Sao
   activerecord:
@@ -94,6 +98,20 @@ vi:
   books:
     index:
       list_books: Danh sách sách
+    new:
+      create_new_book: Tạo sách mới
+      create: Tạo
+      category: Thể loại
+      title: Tiêu đề
+      cover_image: Ảnh bìa
+      publish_date: Ngày xuất bản
+      number_pages: Số trang
+      price: Giá
+      author: Tác giả
+      description: Mô tả
+    create:
+      create_success: Sách đã được tạo thành công
+      create_failure: Có lỗi xảy ra trong khi tạo sách
     book:
       number_pages: Số trang
       author: Tác giả
