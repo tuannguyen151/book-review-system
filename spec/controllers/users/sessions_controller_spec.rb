@@ -5,7 +5,7 @@ RSpec.describe Users::SessionsController, type: :controller do
 
     before do
       user
-      request.env["devise.mapping"] = Devise.mappings[:user]
+      set_request_user
     end
 
     context "sign in failure" do

@@ -77,3 +77,7 @@ en:
   home:
     index:
       home_page: Home page
+  admin:
+    home:
+      index:
+        home_page: Home page
