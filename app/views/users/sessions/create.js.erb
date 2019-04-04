@@ -1,0 +1,8 @@
+$("#alert-login").html(`
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <a href="#" data-dismiss="alert" class="close">×</a>
+      <p class="text text-<%= key %>"><%= value %></p>
+    </div>
+  <% end %>
+`);

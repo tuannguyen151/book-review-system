@@ -17,6 +17,9 @@ vi:
       language: Ngôn ngữ
       english: Tiếng anh
       vietnamese: Tiếng việt
+      personal_information: Thông tin cá nhân
+      change_password: Đổi mật khẩu
+      sign_out: Đăng xuất
     site_blocks:
       title: Đọc, đánh giá và yêu cầu mua sách
       maxim: Chúng tôi sẽ tạo cảm giác trải nghiệm tuyệt vời cho bạn !
@@ -64,3 +67,13 @@ vi:
   time:
     formats:
       datetime: "%H:%M:%S %d/%m/%y"
+  devise:
+    sessions:
+      user:
+        invalid: Mật khẩu không hợp lệ.
+        not_found_in_database: Email không hợp lệ.
+        unconfirmed: Bạn phải xác nhận địa chỉ email của mình trước khi tiếp tục.
+        signed_in: Đã đăng nhập thành công.
+  home:
+    index:
+      home_page: Trang chủ

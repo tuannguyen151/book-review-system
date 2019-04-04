@@ -7,6 +7,9 @@
   </head>
 
   <body>
+    <% if !user_signed_in? %>
+      <%= render "layouts/login_modal" %>
+    <% end %>
     <div class="site-wrap">
       <div class="site-mobile-menu">
         <div class="site-mobile-menu-header">
