@@ -1,0 +1,76 @@
+<% provide :title, t(".edit_book") %>
+<% provide :icon, "icon/books.png"%>
+<div class="site-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-7 text-left border-primary">
+        <h2 class="font-weight-light text-primary">
+          <%= t ".edit_book" %>
+        </h2>
+      </div>
+    </div>
+    <div class="row mt-5 mb-5">
+      <%= form_with url: book_path(@book), model: @book,
+        method: :patch, local: true, class: "col-lg-12" do |f| %>
+
+        <div class="col-md-12">
+          <%= render "shared/flash" %>
+          <%= render "shared/error_messages", object: f.object %>
+        </div>
+
+        <div class="col-md-4 d-block d-md-flex mb-5">
+          <%= f.button t(".update"),
+            class: "btn btn-primary btn-block rounded" %>
+        </div>
+
+        <div class="d-block d-md-flex">
+          <div class="col-md-4 mb-5">
+            <div class="mb-5">
+              <%= f.label t(".category"), class: "text-black mb-3" %>
+              <%= f.select :category_id, @categories, {},
+                class: "form-control d-flex" %>
+            </div>
+
+            <div class="mb-5">
+              <%= f.label t(".title"), class: "text-black mb-3" %>
+              <%= f.text_field :title, class: "form-control d-flex" %>
+            </div>
+
+            <div class="mb-5">
+              <%= f.label t(".cover_image"), class: "text-black mb-3" %>
+              <%= f.file_field :cover_image, accept: "image/jpeg, image/jpg,
+                image/png",class: "photo_upload d-flex" %>
+              <%= image_tag "", class: "hidden image_to_upload mt-2" %>
+            </div>
+
+            <div class="mb-5">
+              <%= f.label t(".publish_date"), class: "text-black mb-3" %>
+              <%= f.date_field :publish_date, class: "form-control d-flex" %>
+            </div>
+
+            <div class="mb-5">
+              <%= f.label t(".number_pages"), class: "text-black mb-3" %>
+              <%= f.number_field :number_pages, class: "form-control d-flex" %>
+            </div>
+
+            <div class="mb-5">
+              <%= f.label t(".price"), class: "text-black mb-3" %>
+              <%= f.number_field :price, class: "form-control d-flex" %>
+            </div>
+
+            <div class="mb-5">
+              <%= f.label t(".author"), class: "text-black mb-3" %>
+              <%= f.text_field :author, class: "form-control d-flex" %>
+            </div>
+          </div>
+
+          <div class="col-md-8 mb-5">
+            <%= f.label t(".description"), class: "mb-3 h5 text-danger" %>
+            <%= f.cktext_area :description, class: "ckeditor" %>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

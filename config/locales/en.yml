@@ -112,10 +112,26 @@ en:
     create:
       create_success: The book was successfully created
       create_failure: An error occurred while creating the book
+    edit:
+      not_found: No find book needed edit
+      edit_book: Edit book
+      update: Update
+      category: Category
+      title: Title
+      cover_image: Cover image
+      publish_date: Publish date
+      number_pages: Number pages
+      price: Price
+      author: Author
+      description: Description
+    update:
+      update_success: Successful book update
+      update_failure: Update the book failed
     book:
       number_pages: Number pages
       author: Author
       price: Price
+      edit: Edit
   users:
     registrations:
       new:

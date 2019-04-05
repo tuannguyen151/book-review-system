@@ -112,10 +112,26 @@ vi:
     create:
       create_success: Sách đã được tạo thành công
       create_failure: Có lỗi xảy ra trong khi tạo sách
+    edit:
+      not_found: Không tìm thấy sách cần chỉnh sửa
+      edit_book: Chỉnh sửa sách
+      update: Cập nhật
+      category: Thể loại
+      title: Tiêu đề
+      cover_image: Ảnh bìa
+      publish_date: Ngày xuất bản
+      number_pages: Số trang
+      price: Giá
+      author: Tác giả
+      description: Mô tả
+    update:
+      update_success: Cập nhật sách thành công
+      update_failure: Cập nhật sách thất bại
     book:
       number_pages: Số trang
       author: Tác giả
       price: Giá
+      edit: Sửa
   users:
     registrations:
       new:

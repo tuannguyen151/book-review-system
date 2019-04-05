@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   authorize_resource
-  before_action :get_categories, only: %i(new create)
+  before_action :get_categories, only: %i(index new create edit update)
+  before_action :get_book, only: %i(edit update)
 
   def index
     @books = Book.includes(:category).page(params[:page])
@@ -23,6 +24,18 @@ class BooksController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @book.update book_params
+      flash[:success] = t ".update_success"
+      redirect_to books_path
+    else
+      flash.now[:danger] = t ".update_failure"
+      render :edit
+    end
+  end
+
   private
 
   def book_params
@@ -32,5 +45,11 @@ class BooksController < ApplicationController
 
   def get_categories
     @categories = Category.pluck :name, :id
+  end
+
+  def get_book
+    return if @book = Book.find_by(id: params[:id])
+    flash[:danger] = t ".not_found"
+    redirect_back fallback_location: books_path
   end
 end
