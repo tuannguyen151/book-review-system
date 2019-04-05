@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   authorize_resource
-  before_action :get_categories, only: %i(index new create edit update)
-  before_action :get_book, only: %i(show edit update)
+  before_action :get_categories
+  before_action :get_book, only: %i(show edit update destroy)
 
   def index
     @books = Book.includes(:category).page(params[:page])
@@ -35,6 +35,16 @@ class BooksController < ApplicationController
     else
       flash.now[:danger] = t ".update_failure"
       render :edit
+    end
+  end
+
+  def destroy
+    if @book.destroy
+      flash[:success] = t ".delete_success"
+      redirect_to books_path
+    else
+      flash[:danger] = t ".delete_failure"
+      redirect_back fallback_location: books_path
     end
   end
 

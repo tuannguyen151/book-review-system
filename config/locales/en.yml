@@ -125,8 +125,13 @@ en:
       author: Author
       description: Description
     update:
+      not_found: No find book needed update
       update_success: Successful book update
       update_failure: Update the book failed
+    destroy:
+      not_found: No find book needed delete
+      delete_success: The book has been successfully deleted
+      delete_failure: An error occurred while deleting books
     book:
       number_pages: Number pages
       author: Author

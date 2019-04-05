@@ -1,6 +1,6 @@
 <% provide :title, t(".create_new_book") %>
 <% provide :icon, "icon/books.png"%>
-<div class="site-section">
+<div class="site-section" id="main-content">
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-7 text-left border-primary">
@@ -14,7 +14,6 @@
         class: "col-lg-12" do |f| %>
 
         <div class="col-md-12">
-          <%= render "shared/flash" %>
           <%= render "shared/error_messages", object: f.object %>
         </div>
 

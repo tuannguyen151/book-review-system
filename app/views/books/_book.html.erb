@@ -20,14 +20,18 @@
         <%= t ".price" %>:
         <%= book.price %>
       </address>
-      <div>
-        <% if can? :update, book %>
-          <%= link_to edit_book_path(book) do %>
+      <span>
+        <% if can? Book::AUTHORIZE_ADMIN, book %>
+          <%= link_to edit_book_path(book), class: "mb-1 mr-5" do %>
             <%= image_tag "svg/edit.svg", class: "icon-crud" %>
             <%= t ".edit" %>
           <% end %>
+          <%= link_to book_path(book), method: :DELETE do %>
+            <%= image_tag "svg/delete.svg", class: "icon-crud" %>
+            <%= t ".delete" %>
+          <% end %>
         <% end %>
-      </div>
+      </span>
       <p class="mb-0">
         <%= render partial: "shared/rate", object: book_rate(book) %>
       </p>
