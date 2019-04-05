@@ -98,3 +98,16 @@ en:
       number_pages: Number pages
       author: Author
       price: Price
+  users:
+    registrations:
+      new:
+        password: "Password"
+        password_confirmation: "Confirmation"
+        characters_minimum: "6 characters minimum"
+        signup: "Sign up"
+    shared:
+      _links:
+        signup: "Sign up"
+        login: "Log in"
+        signin_with: "Sign in with %{OmniAuth::Utils.camelize(provider)}"
+        forgot_your_password: "Forgot your password"
