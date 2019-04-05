@@ -1,6 +1,7 @@
 RSpec.describe BooksController, type: :controller do
   let(:category) {FactoryBot.create :category}
   let(:user) {FactoryBot.create :user, :admin}
+  let(:book) {FactoryBot.create :book}
 
   describe "GET #index" do
     it "returns http success" do
@@ -34,6 +35,40 @@ RSpec.describe BooksController, type: :controller do
     it "failure" do
       post :create, params: {book: {title: "xxx"}}
       expect(response).to have_http_status 200
+    end
+  end
+
+  describe "Get #edit" do
+    before do
+      sign_in user, scope: :user
+    end
+
+    it "success" do
+      get :edit, params: {id: book.id}
+      expect(response).to have_http_status :success
+    end
+  end
+
+  describe "PATCH #update" do
+    before do
+      sign_in user, scope: :user
+    end
+
+    it "success" do
+      patch :update, params: {id: book.id, book: {title: "xxx"}}
+      expect(response).to have_http_status 302
+    end
+
+    context "failure" do
+      it "save failure" do
+        patch :update, params: {id: book.id, book: {publish_date: "1000-01-01"}}
+        expect(response).to have_http_status 200
+      end
+
+      it "not found book" do
+        patch :update, params: {id: 1}
+        expect(response).to have_http_status 302
+      end
     end
   end
 end

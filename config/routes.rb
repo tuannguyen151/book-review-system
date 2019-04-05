@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     namespace :admin do
       root "home#index"
     end
-    resources :books, only: %i(index new create)
+    resources :books, only: %i(index new create edit update)
   end
 end

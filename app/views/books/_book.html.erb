@@ -20,6 +20,14 @@
         <%= t ".price" %>:
         <%= book.price %>
       </address>
+      <div>
+        <% if can? :update, book %>
+          <%= link_to edit_book_path(book) do %>
+            <%= image_tag "svg/edit.svg", class: "icon-crud" %>
+            <%= t ".edit" %>
+          <% end %>
+        <% end %>
+      </div>
       <p class="mb-0">
         <%= render partial: "shared/rate", object: book_rate(book) %>
       </p>
