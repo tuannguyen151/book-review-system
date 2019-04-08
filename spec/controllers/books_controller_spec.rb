@@ -69,6 +69,10 @@ RSpec.describe BooksController, type: :controller do
         patch :update, params: {id: 1}
         expect(response).to have_http_status 302
       end
+  describe "GET #show" do
+    it "returns http success" do
+      book_path(book.id)
+      expect(response).to have_http_status(:success)
     end
   end
 end

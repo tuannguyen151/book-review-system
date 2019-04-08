@@ -5,10 +5,10 @@
     </div>
     <div class="lh-content">
       <span class="category">
-        <%= book.category.name%>
+        <%= book.category.name %>
       </span>
       <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-      <h3><%= link_to book.title, "#" %></h3>
+      <h3><%= link_to book.title, book_path(book) %></h3>
       <address class="mb-0">
         <%= t ".number_pages" %>:
         <%= book.number_pages %></address>
