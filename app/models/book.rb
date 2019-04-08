@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  AUTHORIZE_ADMIN = %w(update delete).freeze
+
   belongs_to :category
   has_many :markers, dependent: :destroy
   has_many :reviews, dependent: :destroy

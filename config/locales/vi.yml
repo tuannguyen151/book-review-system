@@ -125,8 +125,13 @@ vi:
       author: Tác giả
       description: Mô tả
     update:
+      not_found: Không tìm thấy sách cần cập nhật
       update_success: Cập nhật sách thành công
       update_failure: Cập nhật sách thất bại
+    destroy:
+      not_found: Không tìm thấy sách cần xoá
+      delete_success: Sách đã được xoá thành công
+      delete_failure: Có lỗi xảy ra khi xoá sách
     book:
       number_pages: Số trang
       author: Tác giả
