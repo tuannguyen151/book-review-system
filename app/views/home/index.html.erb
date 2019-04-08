@@ -1,5 +1,16 @@
 <% provide :title, t(".home_page") %>
 <% provide :icon, "icon/books.png"%>
-<% if !user_signed_in? %>
+<% if user_signed_in? %>
+  <div class="site-section" id="main-content">
+    <div class="container">
+      <div class="row" id="activities-home-page">
+        <%= render partial: "home/activity", collection: @activities %>
+      </div>
+      <div class="row justify-content-center" id="kaminari-activities">
+        <%= paginate @activities, remote: true %>
+      </div>
+    </div>
+  </div>
+<% else %>
   <%= render "layouts/statistical" %>
 <% end %>

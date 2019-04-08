@@ -1,0 +1,21 @@
+<div class="col-md-12 h5 m-4">
+  <%= link_to user_path(activity.user) do %>
+    <%= image_tag "icon/user.png", class: "avatar-activity" %>
+    <%= activity.user.user_profile.name %>
+  <% end %>
+  <% if activity.activitable_type == "Marker" %>
+    <%= t ".mark" %>
+    <%= i18n_status_marker(activity.activitable).downcase %>
+    <%= link_to book_path(activity.activitable.book) do %>
+      <%= activity.activitable.book.title %>
+    <% end %>
+  <% end %>
+  <% if activity.activitable_type == "Relationship" %>
+    <%= t ".following" %>
+    <%= link_to user_path(activity.activitable.followed_id) do %>
+      <%= activity.activitable.followed.user_profile.name %>
+    <% end %>
+  <% end %>
+  <%= t ".at" %>
+  <%= l activity.created_at, format: :datetime %>
+</div>

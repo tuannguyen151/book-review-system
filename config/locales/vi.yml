@@ -119,6 +119,10 @@ vi:
       next: "Sau &rsaquo;"
       truncate: "&hellip;"
   home:
+    activity:
+      mark: đánh dấu
+      following: theo dõi
+      at: lúc
     index:
       home_page: Trang chủ
   admin:

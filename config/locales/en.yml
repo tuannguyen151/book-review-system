@@ -119,6 +119,10 @@ en:
       next: "Next &rsaquo;"
       truncate: "&hellip;"
   home:
+    activity:
+      mark: mark
+      following: following
+      at: at
     index:
       home_page: Home page
   admin:

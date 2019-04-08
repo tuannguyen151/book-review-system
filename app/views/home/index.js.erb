@@ -1,0 +1,4 @@
+$("#activities-home-page").html(`
+  <%= j render partial: "home/activity", collection: @activities %>
+`);
+$("#kaminari-activities").html("<%= j paginate @activities, remote: true %>");
