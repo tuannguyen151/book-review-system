@@ -1,4 +1,8 @@
 vi:
+  js:
+    markers:
+      marker: Bạn đã đánh dấu sách là %{marker}
+      cancel_marker: Bạn đã hủy đánh dấu %{marker}
   layouts:
     application:
       book_review: Đánh giá sách
@@ -112,6 +116,16 @@ vi:
     create:
       create_success: Sách đã được tạo thành công
       create_failure: Có lỗi xảy ra trong khi tạo sách
+    show:
+      show_book: Thông tin sách
+      no_marker: Khi đăng nhập, bạn có thể đánh dấu sách là yêu thích, đã đọc,
+        đang đọc,...
+      title: Tiều đề
+      number_pages: "Số trang "
+      author: "Tác giả "
+      price: "Giá "
+      description: Mô tả
+      comment: Bình luận
     edit:
       not_found: Không tìm thấy sách cần chỉnh sửa
       edit_book: Chỉnh sửa sách
@@ -137,12 +151,6 @@ vi:
       author: Tác giả
       price: Giá
       edit: Sửa
-    show:
-      number_pages: "Số trang "
-      author: "Tác giả "
-      price: "Giá "
-      description: Mô tả
-      comment: Bình luận
   users:
     registrations:
       edit:
@@ -166,3 +174,26 @@ vi:
         login: "Đăng nhập"
         signin_with: "Đăng nhập với %{OmniAuth::Utils.camelize(provider)}"
         forgot_your_password: "Quên mật khẩu"
+  markers:
+    form:
+      cancel_favorite:
+        cancel_favorite: Hủy yêu thích
+      cancel_readed:
+        cancel_readed: Hủy đã đọc
+      cancel_reading:
+        cancel_reading: Hủy đang đọc
+      cancel_purchase_request:
+        cancel_purchase_request: Hủy yêu cầu mua
+      favorite:
+        favorite: Yêu thích
+      readed:
+        readed: Đã đọc
+      reading:
+        reading: Đang đọc
+      purchase_request:
+        purchase_request: Yêu cầu mua
+    create:
+      book_not_found: Không tìm thấy sách
+    destroy:
+      marker_not_found: Không tìm thấy đánh dấu
+      book_not_found: Không tìm thấy sách

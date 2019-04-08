@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     namespace :admin do
       root "home#index"
     end
-    resources :books
+    resources :books do
+      resources :markers, only: %i(create destroy)
+    end
   end
 end

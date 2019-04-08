@@ -8,8 +8,6 @@ class BooksController < ApplicationController
                  .per Settings.book_in_page
   end
 
-  def show; end
-
   def new
     @book = Book.new
   end
@@ -25,6 +23,8 @@ class BooksController < ApplicationController
       render :new
     end
   end
+
+  def show; end
 
   def edit; end
 

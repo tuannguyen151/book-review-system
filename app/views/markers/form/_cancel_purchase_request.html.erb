@@ -1,0 +1,5 @@
+<%= form_with url: book_marker_path(@book, @marker), method: :delete do |f| %>
+  <%= image_tag "svg/cancel-purchase-request.svg", class: "icon-marker" %>
+  <%= f.button t(".cancel_purchase_request"),
+    class: "btn btn-secondary rounded" %>
+<% end %>
