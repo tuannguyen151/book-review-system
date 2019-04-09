@@ -12,6 +12,7 @@
 //= require rangeslider.min.js
 //= require main.js
 //= require autocomplete-rails
+//= require datatables.min.js
 //= require rails-ujs
 //= require ckeditor/init
 //= require activestorage

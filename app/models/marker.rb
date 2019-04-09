@@ -12,6 +12,8 @@ class Marker < ApplicationRecord
 
   after_create :create_activities
 
+  scope :created_at_desc, ->{order created_at: :desc}
+
   private
 
   def create_activities

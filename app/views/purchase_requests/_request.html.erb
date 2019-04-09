@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <%= image_tag check_image_cover(request.book), class: "image-datatable" %>
+  </td>
+  <td><%= link_to request.book.title, book_path(request.book) %></td>
+  <td><%= request.book.number_pages %></td>
+  <td><%= request.book.author %></td>
+  <td><%= request.book.price %></td>
+  <td><%= l request.created_at, format: :datetime %></td>
+  <td>
+    <%= link_to t(".cancel"), purchase_request_path(request), method: :delete,
+      data: {confirm: t(".confirm")} %>
+  </td>
+</tr>
