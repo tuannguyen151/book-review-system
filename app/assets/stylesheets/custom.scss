@@ -51,7 +51,6 @@ $gray: #ccc;
   height: 25px;
 }
 
-
 .alert-notice {
   color: $red-black;
   background-color: $pink-b;
@@ -320,6 +319,34 @@ $gray: #ccc;
   @include background-tile;
   margin: 20px 0 20px;
 }
+.image-datatable {
+  max-height: 150px;
+}
+
+.icon-marker {
+  height: 60px;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+
+  &:hover {
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(2);
+  }
+}
+
+.listing .lh-content .bookmark.red {
+  background: red;
+
+  .favorite {
+    color: white;
+  }
+}
+
 .image-datatable {
   max-height: 150px;
 }

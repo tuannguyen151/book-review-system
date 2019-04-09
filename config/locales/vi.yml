@@ -25,6 +25,10 @@ vi:
       l12: sách đã đọc mỗi trang
       l4: Không có sách đã đọc
       l52: tất cả sách đã đọc
+    reading_books:
+      l12: sách đang đọc mỗi trang
+      l4: Không có sách đang đọc
+      l52: tất cả sách đang đọc
   layouts:
     application:
       book_review: Đánh giá sách
@@ -298,3 +302,18 @@ vi:
     destroy:
       success: Hủy sách đã đọc thành công
       favorite_not_found: Không tìm thấy sách đã đọc
+  reading_books:
+    reading_book:
+      cancel: Hủy bỏ
+      confirm: Bạn muốn hủy sách đang đọc?
+    index:
+      list_reading_books: Danh sách sách đang đọc
+      cover_image: Ảnh bìa
+      title: Tiêu đề
+      number_pages: Số trang
+      author: Tác giả
+      price: Giá
+      action: Hành động
+    destroy:
+      success: Hủy sách đang đọc thành công
+      favorite_not_found: Không tìm thấy sách đang đọc

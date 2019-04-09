@@ -25,6 +25,10 @@ en:
       l12: readed books per pages
       l4: No readed books available
       l52: total readed book
+    reading_books:
+      l12: reading books per pages
+      l4: No reading books available
+      l52: total reading book
   layouts:
     application:
       book_review: Book review
@@ -298,3 +302,18 @@ en:
     destroy:
       success: Cancel successful readed book
       favorite_not_found: Readed book not found
+  reading_books:
+    reading_book:
+      cancel: Cancel
+      confirm: You want to cancel the reading book?
+    index:
+      list_reading_books: List reading books
+      cover_image: Cover image
+      title: Title
+      number_pages: Number pages
+      author: Author
+      price: Price
+      action: Action
+    destroy:
+      success: Cancel successful reading book
+      favorite_not_found: reading book not found

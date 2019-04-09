@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     resources :purchase_requests, only: %i(index destroy)
     resources :favorites, only: %i(index destroy)
     resources :readed_books, only: %i(index destroy)
+    resources :reading_books, only: %i(index destroy)
   end
 end
