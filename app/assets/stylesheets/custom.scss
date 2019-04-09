@@ -161,5 +161,7 @@ $gray: #ccc;
 .description {
   @include background-tile;
   margin: 20px 0 20px;
-
+}
+.image-datatable {
+  max-height: 150px;
 }

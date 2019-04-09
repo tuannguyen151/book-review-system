@@ -3,6 +3,20 @@ en:
     markers:
       marker: You marked the book as %{marker}
       cancel_marker: You canceled the %{marker} mark
+    purchase_requests:
+      l11: Display
+      l12: requesets per pages
+      l2: Nothing found - Sorry
+      l31: Showing page
+      l32: of
+      l4: No requests available
+      l51: filtered from
+      l52: total request
+      l6: "Search:"
+      l7: First
+      l8: Last
+      l9: Next
+      l10: Previous
   layouts:
     application:
       book_review: Book review
@@ -197,3 +211,19 @@ en:
     destroy:
       marker_not_found: Marker not found
       book_not_found: Book not found
+  purchase_requests:
+    request:
+      cancel: Cancel
+      confirm: You want to cancel the book purchase request?
+    index:
+      purchase_requests: List of the requests buy books
+      cover_image: Cover image
+      title: Title
+      number_pages: Number pages
+      author: Author
+      price: Price
+      action: Action
+      time_request: Time to send request
+    destroy:
+      success: Cancel successful book purchase request
+      purchase_request_not_found: Purchase request not found

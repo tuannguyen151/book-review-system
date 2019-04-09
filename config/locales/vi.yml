@@ -3,6 +3,20 @@ vi:
     markers:
       marker: Bạn đã đánh dấu sách là %{marker}
       cancel_marker: Bạn đã hủy đánh dấu %{marker}
+    purchase_requests:
+      l11: Hiển thị
+      l12: yêu cầu mỗi trang
+      l2: Không tìm thấy gì - Xin lỗi
+      l31: Hiển thị trang
+      l32: của
+      l4: Không có yêu cầu
+      l51: được lọc từ
+      l52: trong tất cả yêu cầu
+      l6: "Tìm kiếm:"
+      l7: Đầu tiên
+      l8: Cuối cùng
+      l9: Sau
+      l10: Trước
   layouts:
     application:
       book_review: Đánh giá sách
@@ -197,3 +211,19 @@ vi:
     destroy:
       marker_not_found: Không tìm thấy đánh dấu
       book_not_found: Không tìm thấy sách
+  purchase_requests:
+    request:
+      cancel: Hủy bỏ
+      confirm: Bạn muốn hủy yêu cầu mua sách?
+    index:
+      purchase_requests: Danh sách yêu cầu mua sách
+      cover_image: Ảnh bìa
+      title: Tiêu đề
+      number_pages: Số trang
+      author: Tác giả
+      price: Giá
+      action: Hành động
+      time_request: Thời gian gửi yêu cầu
+    destroy:
+      success: Hủy yêu cầu mua sách thành công
+      purchase_request_not_found: Không tìm thấy yêu cầu mua sách
