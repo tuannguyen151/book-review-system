@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  authorize_resource class: UserProfile
+  autocomplete :user_profile, :name, full: true
 
   def show
     @profile = User.find_by(id: params[:id]).user_profile

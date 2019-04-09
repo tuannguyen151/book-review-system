@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
-  authorize_resource
+  autocomplete :book, :title, full: true
   before_action :get_categories
   before_action :get_book, only: %i(show edit update destroy)
+  before_action :admin?, only: %i(new create edit update destroy)
 
   def index
     @books = Book.includes(:category).page(params[:page])

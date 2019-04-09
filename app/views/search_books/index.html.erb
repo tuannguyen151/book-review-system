@@ -1,0 +1,72 @@
+<% provide :title, t(".show_book") %>
+<% provide :icon, "icon/books.png"%>
+<div class="site-section" id="main-content">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-7 text-left border-primary">
+        <h2 class="font-weight-light text-primary">
+          <%= t ".show_book" %>
+        </h2>
+      </div>
+    </div>
+    <% if can? %i(create delete), Marker %>
+      <div class="row mt-5">
+        <div class="col-md-3 mb-3" id="marker-favorite">
+          <%= marker_form @book.id, :favorite, current_user %>
+        </div>
+        <div class="col-md-3 mb-3" id="marker-readed">
+          <%= marker_form @book.id, :readed, current_user %>
+        </div>
+        <div class="col-md-3 mb-3" id="marker-reading">
+          <%= marker_form @book.id, :reading, current_user %>
+        </div>
+        <div class="col-md-3 mb-3" id="marker-purchase_request">
+          <%= marker_form @book.id, :purchase_request, current_user %>
+        </div>
+      </div>
+    <% else %>
+      <p class="text-danger h5">
+        <%= t ".no_marker"%>
+      </p>
+    <% end %>
+    <div class="col-lg-8">
+      <div class="row book-info">
+        <div class="col-lg-4">
+          <div class="mb-4">
+            <div class="col-xs-4 col-image image-border">
+              <div><%= image_tag "img_2.jpg", alt: "Image", class: "img-fluid" %></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8 ml-auto">
+
+            <h2 class="book-title"><%= @book.title %></h2>
+            <h3 class="book-author"><span><%= t ".author" %></span>
+              <%= @book.author %>
+            </h3>
+            <p class="book-desc"><span><%= t ".number_pages" %></span>
+              <%= @book.number_pages %>
+            </p>
+            <p class="book-desc"><span><%= t ".price" %></span>
+              <%= @book.price %>
+            </p>
+        </div>
+      </div>
+
+      <div class="row description">
+      <h4 class="h5 mb-4 text-black"><%= t ".description" %></h4>
+
+      </div>
+      <div class="row description">
+      <h4 class="h5 mb-4 text-black"><%= t ".comment" %></h4>
+
+      </div>
+      <div class="row"></div>
+    </div>
+    <div class="col-lg-4 ">
+      <div class="reviews">
+      </div>
+    </div>
+  </div>
+</div>

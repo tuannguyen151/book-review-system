@@ -54,9 +54,10 @@ en:
     site_blocks:
       title: Read, rate and request to buy book
       maxim: We will create wonderful experience for you!
-      search_content: what are you searching for?
-      can_choose_format: Can choose format
-      search: Search
+      search_book: what are you searching book for?
+      search_user: What are you want to search username?
+      btn_search_book: Search book
+      btn_search_user: Search user
     statistical:
       users: Users
       books: Books
@@ -151,7 +152,6 @@ en:
       show_book: Book information
       no_marker: When logged in, you can mark books as favorites, readed,
         reading,...
-      title: Title
       number_pages: "Number pages "
       author: "Author "
       price: "Price "
@@ -321,3 +321,17 @@ en:
     destroy:
       success: Cancel successful reading book
       favorite_not_found: reading book not found
+  search_books:
+    index:
+      not_found: Book not found
+      show_book: Book information
+      no_marker: When logged in, you can mark books as favorites, readed,
+        reading,...
+      number_pages: "Number pages "
+      author: "Author "
+      price: "Price "
+      description: Description
+      comment: Comment
+  search_users:
+    index:
+      user_not_found: User not found

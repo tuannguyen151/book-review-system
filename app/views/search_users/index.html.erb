@@ -1,0 +1,70 @@
+<% provide :title, t(".user_profile") %>
+<% provide :icon, "icon/books.png"%>
+<div class="site-section" id="main-content">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-7 text-center border-primary">
+        <h2 class="font-weight-light text-primary">
+          <%= t ".user_profile" %>
+        </h2>
+      </div>
+      <div class="col-md-7 text-center mt-3">
+        <p class="color-black-opacity-5 h4">
+          Name:
+          <span class="text-danger">
+            <%= @profile.name %>
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-8 mb-5">
+        <div id="follow-form">
+          <%= ralationship_form(current_user, @profile.user) if
+            user_signed_in? %>
+        </div>
+
+        <div class="col-md-12 mt-5">
+          <span class="h5">
+            Gender:
+          </span>
+          <span class="h5 ml-md-5 text-danger font-weight-bold">
+            <%= @profile.gender %>
+          </span>
+        </div>
+
+        <div class="col-md-12 mt-5">
+          <span class="h5">
+            Birthday:
+          </span>
+          <span class="h5 ml-md-5 text-danger font-weight-bold">
+            <%= l @profile.birthday, format: :date %>
+          </span>
+        </div>
+
+        <div class="col-md-12 mt-5">
+          <span class="h5">
+            Address:
+          </span>
+          <span class="h5 ml-md-5 text-danger font-weight-bold">
+            <%= @profile.address %>
+          </span>
+        </div>
+
+        <div class="col-md-12 mt-5">
+          <span class="h5">
+            Phone:
+          </span>
+          <span class="h5 ml-md-5 text-danger font-weight-bold">
+            <%= @profile.phone %>
+          </span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <%= image_tag "img_1.jpg", class: "box-shadow width-inherit" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -25,6 +25,10 @@ class ApplicationController < ActionController::Base
       current_user && current_user.admin?
   end
 
+  def current_user?
+    redirect_back fallback_location: root_path unless current_user
+  end
+
   def after_sign_in_path_for _resource
     if current_user.admin?
       admin_root_path

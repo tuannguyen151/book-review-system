@@ -54,9 +54,10 @@ vi:
     site_blocks:
       title: Đọc, đánh giá và yêu cầu mua sách
       maxim: Chúng tôi sẽ tạo cảm giác trải nghiệm tuyệt vời cho bạn !
-      search_content: Bạn đang tìm gì vậy?
-      can_choose_format: Có thể chọn định dạng
-      search: Tìm kiếm
+      search_book: Bạn đang tìm kiếm cuốn sách gì?
+      search_user: Bạn đang muốn tìm kiếm tên người dùng là gì?
+      btn_search_book: Tìm kiếm sách
+      btn_search_user: Tìm kiếm người dùng
     statistical:
       users: Người dùng
       books: Sách
@@ -151,7 +152,6 @@ vi:
       show_book: Thông tin sách
       no_marker: Khi đăng nhập, bạn có thể đánh dấu sách là yêu thích, đã đọc,
         đang đọc,...
-      title: Tiều đề
       number_pages: "Số trang "
       author: "Tác giả "
       price: "Giá "
@@ -321,3 +321,17 @@ vi:
     destroy:
       success: Hủy sách đang đọc thành công
       favorite_not_found: Không tìm thấy sách đang đọc
+  search_books:
+    index:
+      show_book: Thông tin sách
+      no_marker: Khi đăng nhập, bạn có thể đánh dấu sách là yêu thích, đã đọc,
+        đang đọc,...
+      not_found: Không tìm thấy sách
+      number_pages: "Số trang "
+      author: "Tác giả "
+      price: "Giá "
+      description: Mô tả
+      comment: Bình luận
+  search_users:
+    index:
+      user_not_found: Không tìm thấy người dùng
