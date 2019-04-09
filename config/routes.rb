@@ -13,5 +13,6 @@ Rails.application.routes.draw do
       resources :reviews
     end
     resources :purchase_requests, only: %i(index destroy)
+    resources :favorites, only: %i(index destroy)
   end
 end

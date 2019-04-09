@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <%= image_tag check_image_cover(favorite.book), class: "image-datatable" %>
+  </td>
+  <td><%= link_to favorite.book.title, book_path(favorite.book) %></td>
+  <td><%= favorite.book.number_pages %></td>
+  <td><%= favorite.book.author %></td>
+  <td><%= favorite.book.price %></td>
+  <td><%= l favorite.created_at, format: :datetime %></td>
+  <td>
+    <%= link_to t(".cancel"), favorite_path(favorite), method: :delete,
+      data: {confirm: t(".confirm")} %>
+  </td>
+</tr>

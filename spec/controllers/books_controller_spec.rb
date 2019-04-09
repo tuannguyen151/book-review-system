@@ -108,4 +108,15 @@ RSpec.describe BooksController, type: :controller do
       expect(response).to have_http_status 302
     end
   end
+
+  describe "DELETE #destroy" do
+    before do
+      sign_in user, scope: :user
+    end
+
+    it "success" do
+      delete :destroy, params: {id: book.id}
+      expect(response).to have_http_status 302
+    end
+  end
 end

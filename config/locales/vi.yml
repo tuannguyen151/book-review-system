@@ -17,6 +17,10 @@ vi:
       l8: Cuối cùng
       l9: Sau
       l10: Trước
+    favorites:
+      l12: yêu thích mỗi trang
+      l4: Không có yêu thích
+      l52: tất cả yêu thích
   layouts:
     application:
       book_review: Đánh giá sách
@@ -131,6 +135,7 @@ vi:
       create_success: Sách đã được tạo thành công
       create_failure: Có lỗi xảy ra trong khi tạo sách
     show:
+      title: Tiêu đề
       show_book: Thông tin sách
       no_marker: Khi đăng nhập, bạn có thể đánh dấu sách là yêu thích, đã đọc,
         đang đọc,...
@@ -143,6 +148,7 @@ vi:
       average_rating: Xếp hạng trung bình
       user_of_reviews: Người dùng đánh giá
       reviews: " đánh giá"
+      text_review: Bạn có đánh giá dưới đây
     edit:
       not_found: Không tìm thấy sách cần chỉnh sửa
       edit_book: Chỉnh sửa sách
@@ -240,3 +246,36 @@ vi:
       create_success: Đánh giá đã được tạo thành công
       create_failure: Đã xảy ra lỗi khi tạo đánh giá
   book_price: $%{price}
+  purchase_requests:
+    request:
+      cancel: Hủy bỏ
+      confirm: Bạn muốn hủy yêu cầu mua sách?
+    index:
+      purchase_requests: Danh sách yêu cầu mua sách
+      cover_image: Ảnh bìa
+      title: Tiêu đề
+      number_pages: Số trang
+      author: Tác giả
+      price: Giá
+      action: Hành động
+      time_request: Thời gian gửi yêu cầu
+    destroy:
+      success: Hủy yêu cầu mua sách thành công
+      purchase_request_not_found: Không tìm thấy yêu cầu mua sách
+  favorites:
+    favorite:
+      cancel: Hủy bỏ
+      confirm: Bạn muốn hủy cuốn sách yêu thích?
+    index:
+      list_favorites: Danh sách sách yêu thích
+      cover_image: Ảnh bìa
+      title: Tiêu đề
+      number_pages: Số trang
+      author: Tác giả
+      price: Giá
+      action: Hành động
+      favorite_time_at: Yêu thích lúc
+    destroy:
+      success: Hủy yêu thích sách thành công
+      destroy_failure: Có lỗi xảy ra khi hủy bỏ yêu thích sách
+      favorite_not_found: Không tìm thấy sách yêu thích
