@@ -1,0 +1,4 @@
+$("#marker-<%= @marker.status %>").html(`
+  <%= j render "markers/form/cancel_#{@marker.status}" %>
+`);
+alert("<%= I18n.t "js.markers.marker", marker: status_marker(@marker) %>");

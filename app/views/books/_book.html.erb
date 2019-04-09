@@ -7,7 +7,12 @@
       <span class="category">
         <%= book.category.name %>
       </span>
-      <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+      <% if user_signed_in? %>
+        <span class="bookmark
+          <%= "red" if check_favorite?(book.id, current_user) %>">
+          <span class="icon-heart favorite"></span>
+        </span>
+      <% end %>
       <h3><%= link_to book.title, book_path(book) %></h3>
       <address class="mb-0">
         <%= t ".number_pages" %>:

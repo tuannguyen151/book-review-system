@@ -1,4 +1,8 @@
 en:
+  js:
+    markers:
+      marker: You marked the book as %{marker}
+      cancel_marker: You canceled the %{marker} mark
   layouts:
     application:
       book_review: Book review
@@ -112,6 +116,16 @@ en:
     create:
       create_success: The book was successfully created
       create_failure: An error occurred while creating the book
+    show:
+      show_book: Book information
+      no_marker: When logged in, you can mark books as favorites, readed,
+        reading,...
+      title: Title
+      number_pages: "Number pages "
+      author: "Author "
+      price: "Price "
+      description: Description
+      comment: Comment
     edit:
       not_found: No find book needed edit
       edit_book: Edit book
@@ -137,12 +151,6 @@ en:
       author: Author
       price: Price
       edit: Edit
-    show:
-      number_pages: "Number pages "
-      author: "Author "
-      price: "Price "
-      description: Description
-      comment: Comment
   users:
     registrations:
       edit:
@@ -166,3 +174,26 @@ en:
         login: "Log in"
         signin_with: "Sign in with %{OmniAuth::Utils.camelize(provider)}"
         forgot_your_password: "Forgot your password"
+  markers:
+    form:
+      cancel_favorite:
+        cancel_favorite: Cancel favorite
+      cancel_readed:
+        cancel_readed: Cancel readed
+      cancel_reading:
+        cancel_reading: Cancel reading
+      cancel_purchase_request:
+        cancel_purchase_request: Cancel purchase request
+      favorite:
+        favorite: Favorite
+      readed:
+        readed: Readed
+      reading:
+        reading: Reading
+      purchase_request:
+        purchase_request: Purchase request
+    create:
+      book_not_found: Book not found
+    destroy:
+      marker_not_found: Marker not found
+      book_not_found: Book not found

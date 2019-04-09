@@ -1,0 +1,5 @@
+<%= form_with url: book_markers_path(@book) do |f| %>
+  <%= f.hidden_field :status, value: :purchase_request %>
+  <%= image_tag "svg/purchase-request.svg", class: "icon-marker" %>
+  <%= f.button t(".purchase_request"), class: "btn btn-primary rounded" %>
+<% end %>
