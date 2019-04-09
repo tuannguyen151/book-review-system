@@ -4,3 +4,5 @@ years: 100
 host: "localhost:3000"
 remember: "1"
 book_in_page: 6
+average_rate: 2
+limit_review: 5
