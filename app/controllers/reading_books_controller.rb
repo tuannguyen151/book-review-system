@@ -4,7 +4,7 @@ class ReadingBooksController < ApplicationController
 
   def index
     @reading_books = current_user.markers.created_at_desc
-                            .where(status: :reading).includes(:book)
+                                 .where(status: :reading).includes(:book)
   end
 
   def destroy

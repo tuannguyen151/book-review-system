@@ -350,3 +350,41 @@ $gray: #ccc;
 .image-datatable {
   max-height: 150px;
 }
+
+.icon-marker {
+  height: 60px;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+
+  &:hover {
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(2);
+  }
+}
+
+.listing .lh-content .bookmark.red {
+  background: red;
+
+  .favorite {
+    color: white;
+  }
+}
+
+.image-datatable {
+  max-height: 150px;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0px 3px 25px -10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 3px 25px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 25px -10px rgba(0, 0, 0, 0.5);
+}
+
+.width-inherit {
+  width: inherit;
+}

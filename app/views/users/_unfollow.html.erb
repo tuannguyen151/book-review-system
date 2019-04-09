@@ -1,0 +1,7 @@
+<%= link_to user_relationship_path(user_id: @user, id: current_user),
+  class: "btn btn-secondary btn-block rounded mr-2 ml-2", remote: true,
+    method: :delete do %>
+  <h3 class="font-weight-bold text-light">
+    Unfollow
+  </h3>
+<% end %>
