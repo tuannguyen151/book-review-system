@@ -53,25 +53,26 @@ $(document).on("turbolinks:load", function () {
       },
     },
   });
-  $('.review-rating').raty({
+     $('.review-rating').raty({
     readOnly: true,
     score: function() {
-    return $(this).attr('data-score');
-  },
+      return $(this).attr('data-score');
+    },
     path: '/assets/'
   });
 
-  $('#rating-form').raty({
-    path: '/assets/',
-    scoreName: 'review[rate]'
+$('#rating-form').raty({
+  path: '/assets/',
+  scoreName: 'review[rate]'
   });
 
-  $('.average-review-rating').raty({
-    readOnly: true,
-    path: '/assets/',
-    score: function() {
-      return $(this).attr('data-score')}
-  });
+$('.average-review-rating').raty({
+  readOnly: true,
+  path: '/assets/',
+  score: function() {
+    return $(this).attr('data-score')
+  }
+});
   $('#my-link').on('click', function (event) {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {

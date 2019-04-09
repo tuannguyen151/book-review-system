@@ -140,6 +140,9 @@ vi:
       price: "Giá "
       description: Mô tả
       comment: Bình luận
+      average_rating: Xếp hạng trung bình
+      user_of_reviews: Người dùng đánh giá
+      reviews: " đánh giá"
     edit:
       not_found: Không tìm thấy sách cần chỉnh sửa
       edit_book: Chỉnh sửa sách
@@ -165,16 +168,6 @@ vi:
       author: Tác giả
       price: Giá
       edit: Sửa
-    show:
-      number_pages: "Số trang "
-      author: "Tác giả "
-      price: "Giá "
-      description: Mô tả
-      comment: Bình luận
-      average_rating: Xếp hạng trung bình
-      user_of_reviews: Người dùng đánh giá
-      reviews: " đánh giá"
-      text_review: Bạn có đánh giá dưới đây
   users:
     registrations:
       edit:
