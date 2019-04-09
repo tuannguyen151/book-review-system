@@ -21,6 +21,10 @@ en:
       l12: favorites per pages
       l4: No favorites available
       l52: total favorite
+    readed_books:
+      l12: readed books per pages
+      l4: No readed books available
+      l52: total readed book
   layouts:
     application:
       book_review: Book review
@@ -279,3 +283,18 @@ en:
       success: Cancel successful favorite book
       destroy_failure: An error occurred while canceling book favorites
       favorite_not_found: Favorite book not found
+  readed_books:
+    readed_book:
+      cancel: Cancel
+      confirm: You want to cancel the readed book?
+    index:
+      list_readed_books: List readed books
+      cover_image: Cover image
+      title: Title
+      number_pages: Number pages
+      author: Author
+      price: Price
+      action: Action
+    destroy:
+      success: Cancel successful readed book
+      favorite_not_found: Readed book not found

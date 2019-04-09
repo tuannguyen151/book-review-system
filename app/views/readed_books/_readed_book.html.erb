@@ -1,0 +1,13 @@
+<tr>
+  <td>
+    <%= image_tag check_image_cover(readed_book.book), class: "image-datatable" %>
+  </td>
+  <td><%= link_to readed_book.book.title, book_path(readed_book.book) %></td>
+  <td><%= readed_book.book.number_pages %></td>
+  <td><%= readed_book.book.author %></td>
+  <td><%= readed_book.book.price %></td>
+  <td>
+    <%= link_to t(".cancel"), readed_book_path(readed_book), method: :delete,
+      data: {confirm: t(".confirm")} %>
+  </td>
+</tr>

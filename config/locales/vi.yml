@@ -21,6 +21,10 @@ vi:
       l12: yêu thích mỗi trang
       l4: Không có yêu thích
       l52: tất cả yêu thích
+    readed_books:
+      l12: sách đã đọc mỗi trang
+      l4: Không có sách đã đọc
+      l52: tất cả sách đã đọc
   layouts:
     application:
       book_review: Đánh giá sách
@@ -279,3 +283,18 @@ vi:
       success: Hủy yêu thích sách thành công
       destroy_failure: Có lỗi xảy ra khi hủy bỏ yêu thích sách
       favorite_not_found: Không tìm thấy sách yêu thích
+  readed_books:
+    readed_book:
+      cancel: Hủy bỏ
+      confirm: Bạn muốn hủy sách đã đọc?
+    index:
+      list_readed_books: Danh sách sách đã đọc
+      cover_image: Ảnh bìa
+      title: Tiêu đề
+      number_pages: Số trang
+      author: Tác giả
+      price: Giá
+      action: Hành động
+    destroy:
+      success: Hủy sách đã đọc thành công
+      favorite_not_found: Không tìm thấy sách đã đọc
