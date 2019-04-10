@@ -1,0 +1,32 @@
+<% provide :title, t(".list_favorites") %>
+<% provide :icon, "icon/books.png"%>
+<div class="site-section" id="main-content">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-7 text-left border-primary">
+        <h2 class="font-weight-light text-primary">
+          <%= t ".list_favorites" %>
+        </h2>
+      </div>
+    </div>
+    <div class="col-md-12 mt-5" id="list-favorites">
+      <table id="table-favorites"
+        class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th><%= t ".cover_image" %></th>
+            <th><%= t ".title" %></th>
+            <th><%= t ".number_pages" %></th>
+            <th><%= t ".author" %></th>
+            <th><%= t ".price" %></th>
+            <th><%= t ".favorite_time_at" %></th>
+            <th><%= t ".action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "favorites/favorite", collection: @favorites %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
