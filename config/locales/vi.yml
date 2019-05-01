@@ -1,6 +1,8 @@
 vi:
   js:
     markers:
+      book_marker: Đánh dấu sách
+      unmark_book: Bỏ đánh dấu sách
       marker: Bạn đã đánh dấu sách là %{marker}
       cancel_marker: Bạn đã hủy đánh dấu %{marker}
     purchase_requests:

@@ -5,7 +5,7 @@
   <% end %>
   <% if activity.activitable_type == "Marker" %>
     <%= t ".mark" %>
-    <%= i18n_status_marker(activity.activitable).downcase %>
+    <%= status_marker(activity.activitable).downcase %>
     <%= link_to book_path(activity.activitable.book) do %>
       <%= activity.activitable.book.title %>
     <% end %>

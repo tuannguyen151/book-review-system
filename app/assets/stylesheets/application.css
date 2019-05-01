@@ -10,6 +10,7 @@
  *= require aos.css
  *= require rangeslider.css
  *= require datatables.min.css
+ *= require sweetalert2
  *= require style.css
  *= require_tree .
  *= require_self

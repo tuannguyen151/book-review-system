@@ -1,6 +1,8 @@
 en:
   js:
     markers:
+      book_marker: Book marker
+      unmark_book: Unmark Book
       marker: You marked the book as %{marker}
       cancel_marker: You canceled the %{marker} mark
     purchase_requests:

@@ -13,6 +13,7 @@
 //= require main.js
 //= require autocomplete-rails
 //= require datatables.min.js
+//= require sweetalert2
 //= require rails-ujs
 //= require ckeditor/init
 //= require activestorage
