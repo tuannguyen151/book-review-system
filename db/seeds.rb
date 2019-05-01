@@ -1,10 +1,10 @@
-User.create! email: "user@gmail.com", password: "123123", confirmed_at: Time.now
-User.create! email: "admin@gmail.com", password: "123123", admin: true,
+user_first=User.create! email: "user@gmail.com", password: "123123",
+  confirmed_at: Time.now
+admin = User.create! email: "admin@gmail.com", password: "123123", admin: true,
   confirmed_at: Time.now
 User.create! email: "failure@gmail.com", password: "123123"
-User.find_by(id: 2).create_user_profile name: "Admin XX", gender: "male",
+admin.create_user_profile name: "Admin XX", gender: "male",
   birthday: "1997-01-01", address: "Viet Nam", phone: "0966666665"
-user_first = User.first
 user_first.create_user_profile name: "Ex's hate me", gender: "male",
   birthday: "1997-01-01", address: "Viet Nam", phone: "0966666666"
 Category.create! name: "website"

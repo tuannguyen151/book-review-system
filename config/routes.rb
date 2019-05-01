@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "home#index"
     devise_for :users, controllers: {sessions: "users/sessions"},
-      path: "", path_names: {sign_in: "login",
-                             sign_out: "logout", edit: "edit", sign_up: "signup"}
+      path: "", path_names: {edit: "change_password", sign_up: "register"}
     namespace :admin do
       root "home#index"
     end
@@ -19,7 +18,8 @@ Rails.application.routes.draw do
       resources :relationships, only: %i(create destroy)
       get :autocomplete_user_profile_name, on: :collection
     end
-    resources :purchase_requests, only: %i(index destroy)
+    resources :purchase_requests, path: "purchase-requests",
+      only: %i(index destroy)
     resources :favorites, only: %i(index destroy)
     resources :readed_books, only: %i(index destroy)
     resources :reading_books, only: %i(index destroy)

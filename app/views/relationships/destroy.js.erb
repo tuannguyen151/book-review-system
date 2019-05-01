@@ -1,1 +1,7 @@
 $("#follow-form").html("<%= j render "users/follow" %>");
+
+Swal.fire(
+  "<%= I18n.t "js.relationships.unfollow" %>",
+  "<%= I18n.t "js.relationships.notification_unfollow" %>",
+  "error"
+);

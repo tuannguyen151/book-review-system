@@ -1,5 +1,10 @@
 vi:
   js:
+    relationships:
+      follow: Theo dõi
+      notification_follow: Bạn đã theo dõi người dùng thành công
+      unfollow: Huỷ theo dõi
+      notification_unfollow: Bạn đã huỷ theo dõi người dùng thành công
     markers:
       book_marker: Đánh dấu sách
       unmark_book: Bỏ đánh dấu sách
@@ -47,7 +52,7 @@ vi:
       sign_in: Đăng nhập
       register: Đăng kí
       language: Ngôn ngữ
-      english: Tiếng anh
+      english: English
       vietnamese: Tiếng việt
       personal_information: Thông tin cá nhân
       change_password: Đổi mật khẩu
@@ -79,6 +84,11 @@ vi:
         tạo
       copyright2: bởi
       colorlib: Colorlib
+    login_modal:
+      sign_in: Đăng nhập
+      password: Mật khẩu
+      remember_me: Nhớ tôi
+      log_in: Đăng nhập
   shared:
     error_messages:
       content1: Biểu mẫu có chứa
@@ -150,19 +160,17 @@ vi:
       create_success: Sách đã được tạo thành công
       create_failure: Có lỗi xảy ra trong khi tạo sách
     show:
-      title: Tiêu đề
-      show_book: Thông tin sách
-      no_marker: Khi đăng nhập, bạn có thể đánh dấu sách là yêu thích, đã đọc,
-        đang đọc,...
-      number_pages: "Số trang "
-      author: "Tác giả "
-      price: "Giá "
-      description: Mô tả
-      comment: Bình luận
-      average_rating: Xếp hạng trung bình
-      user_of_reviews: Người dùng đánh giá
-      reviews: " đánh giá"
-      text_review: Bạn có đánh giá dưới đây
+      book_information: Thông tin sách
+      author: Tác giả
+      number_pages: Số trang
+      publish_date: Ngày xuất bản
+      price: Giá
+      average_rating: Đánh giá trung bình
+      reviews: đánh giá
+      stars: sao
+      can_review: Bạn có thể đánh giá dưới đây
+      description: Mô tả nội dung cuốn sách
+      community_reviews: Đánh giá của cộng đồng
     edit:
       not_found: Không tìm thấy sách cần chỉnh sửa
       edit_book: Chỉnh sửa sách
@@ -189,28 +197,53 @@ vi:
       price: Giá
       edit: Sửa
   users:
+    unfollow:
+      unfollow: Huỷ theo dõi
+    follow:
+      follow: Theo dõi
+    show:
+      user_profile: Hồ sơ người dùng
+      user_information: Thông tin người dùng
+      gender: Giới tính
+      birthday: Sinh nhật
+      address: Địa chỉ
+      phone: Điện thoại
+      email: Email
+    confirmations:
+      new:
+        resend_confirmation_instructions: Gửi lại hướng dẫn xác nhận
+        submit: Gửi đi
+    passwords:
+      new:
+        forgot_your_password: Quên mật khẩu?
+        send_reset_password: Gửi cho tôi hướng dẫn đặt lại mật khẩu
+      edit:
+        reset_password: Đặt lại mật khẩu
+        new_password: Mật khẩu mới
+        characters_minimum: Tối thiểu %{pass} ký tự
+        confirm_new_password: Xác nhận mật khẩu mới
     registrations:
       edit:
-        home_page: "Thay đổi mật khẩu"
+        change_password: Đổi mật khẩu
         current_password: "Mật khẩu hiện tại"
         password: "Mật khẩu"
         text_password: "(chúng tôi cần mật khẩu hiện tại của bạn để xác nhận thay đổi của bạn)"
-        text_new_password: "(để trống nếu bạn không muốn thay đổi nó)"
-        password_confirmation: "Xác nhận"
-        characters_minimum: " Tối thiểu 6 ký tự"
+        password_confirmation: Xác nhận mật khẩu
+        characters_minimum: Tối thiểu %{pass} ký tự
         btn_update: "Cập nhật"
         btn_back: "Trở lại"
       new:
+        register: Đăng kí
         password: "Mật khẩu"
-        password_confirmation: "Xác nhận mật khẩu"
-        characters_minimum: " Tối thiểu 6 ký tự"
+        password_confirmation: Xác nhận mật khẩu
+        characters_minimum: Tối thiểu %{pass} ký tự
         signup: "Đăng ký"
     shared:
-      _links:
-        signup: "Đăng ký"
-        login: "Đăng nhập"
-        signin_with: "Đăng nhập với %{OmniAuth::Utils.camelize(provider)}"
-        forgot_your_password: "Quên mật khẩu"
+      links:
+        forgot_your_password: Quên mật khẩu
+        not_receive_confirmation: Không nhận được hướng dẫn xác nhận?
+        not_receive_unlock: Không nhận được hướng dẫn mở khoá?
+        sign_in_with: Đăng nhập bằng %{app}
   markers:
     form:
       cancel_favorite:

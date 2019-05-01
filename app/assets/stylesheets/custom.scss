@@ -1,3 +1,6 @@
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+
 $gray: #ccc;
 $cyan: #30e3ca;
 $red-black: #ff0062;
@@ -16,6 +19,19 @@ $gray: #ccc;
 
 #bg-site-blocks {
   background-image: url("hero_2.jpg");
+}
+
+.site-navbar .site-logo > span {
+  font-size: 1rem;
+  font-weight: 900;
+  padding-left: 10px;
+  position: absolute;
+  top: -5px;
+}
+
+a.disable {
+  pointer-events: none;
+  cursor: default;
 }
 
 #bottom-header {
@@ -82,52 +98,9 @@ $gray: #ccc;
   .new-review {
     padding-top: 8px;
   }
-
 }
-
-
-//book style
-.book-info {
-  @include background-tile;
-    margin:0;
-
-  .book-title {
-    margin-top: 0;
-    font-size: 2em;
-  }
-
-  .avg-rating {
-    font-size: 1.5em;
-    margin-top: 15px;
-    margin-bottom: 5px;
-  }
-
-  .number-of-reviews {
-    font-size: 0.85em;
-    font-style: italic;
-  }
-
-  .book-author {
-    font-size: 1.5em;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    span {
-      font-size: 0.80em;
-    }
-  }
-
-  .book-desc {
-    font-size: 1.05em;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    margin-top: 15px;
-  }
-
-}
-
 
 //border image
-
 .image-border{
     box-sizing: border-box;
   background-color: white;
@@ -135,8 +108,6 @@ $gray: #ccc;
   box-shadow: 3px 3px 5px 6px #ccc;
   padding: .5em .25em;
 }
-//
-
 
 
 /* Button/link styles */
@@ -281,11 +252,6 @@ $gray: #ccc;
     margin-top: 15px 0 5px;
   }
 
-  .number-of-reviews {
-    font-size: 0.85em;
-    font-style: italic;
-  }
-
   .book-author {
     font-size: 1.5em;
     margin-top: 10px 0 10px;
@@ -391,4 +357,48 @@ $gray: #ccc;
 
 .avatar-activity {
   height: 60px;;
+}
+
+// Profile
+div.cover-image {
+  position: relative;
+  height: 40vh;
+  background-image: linear-gradient(
+    to left,#ff9a9e 0%, #fecfef 99%, #fecfef 100%
+  );
+
+  .avatar-image {
+    position: absolute;
+    bottom: -15%;
+    left: 2%;
+    height: 30vh;
+    width: 30vh;
+
+    &>img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      border: white 5px solid;
+    }
+  }
+
+  .user-name {
+    position: absolute;
+    left: 20vw;
+    bottom: 5%;
+    color: #ff4444;
+  }
+}
+
+.border-warning {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background: $warning;
+  }
 }

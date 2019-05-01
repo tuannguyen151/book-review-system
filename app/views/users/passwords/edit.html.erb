@@ -1,31 +1,55 @@
-<div class="site-section" id="main-content">
+<% provide :title, t(".reset_password") %>
+<% provide :icon, "icon/books.png"%>
+<div class="site-section bg-light" id="main-content">
   <div class="container">
-    <center>
-      <div class="col-md-6 col-md-offset-3">
-        <div class="edit-review-form">
-<h2>Change your password</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6 bg-white p-5" data-aos="fade">
+        <div class="border-primary mb-5 pb-1">
+          <h2 class="text-primary">
+            <%= t ".reset_password" %>
+          </h2>
+        </div>
+        <%= form_for resource, as: resource_name,
+          url: password_path(resource_name), html: { method: :put } do |f| %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
+          <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+          <%= render "shared/error_messages", object: resource %>
+
+          <div class="row form-group pb-3">
+            <div class="col-md-12">
+              <%= f.label :password, t(".new_password"), class: "text-black" %>
+              <%= f.password_field :password, autocomplete: "new-password",
+                class: "form-control" %>
+              <% if @minimum_password_length %>
+                <em>
+                  <%= t ".characters_minimum",
+                    pass: @minimum_password_length %>
+                </em>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row form-group pb-3">
+            <div class="col-md-12">
+              <%= f.label :password_confirmation,
+                t(".confirm_new_password"), class: "text-black" %>
+              <%= f.password_field :password_confirmation, autocomplete: "off",
+                class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="row form-group pb-3">
+            <div class="col-md-8">
+              <%= f.submit t(".reset_password"),
+                class: "btn btn-primary py-2 px-4 text-white" %>
+              <%= link_to "Back", :back,
+                class: "btn btn-primary py-2 px-4 text-white" %>
+            </div>
+          </div>
+        <% end %>
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
-</div></div></center></div></div>
+</div>

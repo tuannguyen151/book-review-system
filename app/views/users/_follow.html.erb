@@ -1,6 +1,4 @@
-<%= link_to user_relationships_path(@user), method: :post, remote: true,
-  class: "btn btn-primary btn-block rounded mr-2 ml-2" do %>
-  <h3 class="font-weight-bold text-light">
-    Follow
-  </h3>
+<%= form_with url: user_relationships_path(@user) do |f| %>
+  <%= f.button t(".follow"), class: "btn btn-primary btn-block rounded
+    font-weight-bold text-light m-0" %>
 <% end %>

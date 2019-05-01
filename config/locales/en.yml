@@ -1,5 +1,10 @@
 en:
   js:
+    relationships:
+      follow: Follow
+      notification_follow: You have successfully followed user
+      unfollow: Unfollow
+      notification_unfollow: You have successfully unfollowed user
     markers:
       book_marker: Book marker
       unmark_book: Unmark Book
@@ -48,7 +53,7 @@ en:
       register: Register
       language: Language
       english: English
-      vietnamese: Vietnamese
+      vietnamese: Tiếng Việt
       personal_information: Personal information
       change_password: Change password
       sign_out: Sign out
@@ -79,6 +84,11 @@ en:
         is made with
       copyright2: by
       colorlib: Colorlib
+    login_modal:
+      sign_in: Sign in
+      password: Password
+      remember_me: Remember me
+      log_in: Login
   shared:
     error_messages:
       content1: The form contains
@@ -150,19 +160,17 @@ en:
       create_success: The book was successfully created
       create_failure: An error occurred while creating the book
     show:
-      title: Title
-      show_book: Book information
-      no_marker: When logged in, you can mark books as favorites, readed,
-        reading,...
-      number_pages: "Number pages "
-      author: "Author "
-      price: "Price "
-      description: Description
-      comment: Comment
-      average_rating: Average Rating
-      user_of_reviews: user of reviews
-      reviews: " reviews"
-      text_review: You have the rating below
+      book_information: Book information
+      author: Author
+      number_pages: Number pages
+      publish_date: Publish date
+      price: Price
+      average_rating: Average rating
+      reviews: reviews
+      stars: stars
+      can_review: You can rate below
+      description: Describe content of the book
+      community_reviews: Community reviews
     edit:
       not_found: No find book needed edit
       edit_book: Edit book
@@ -189,28 +197,53 @@ en:
       price: Price
       edit: Edit
   users:
+    unfollow:
+      unfollow: Unfollow
+    follow:
+      follow: Follow
+    show:
+      user_profile: User profile
+      user_information: User information
+      gender: Gender
+      birthday: Birthday
+      address: Address
+      phone: Phone
+      email: Email
+    confirmations:
+      new:
+        resend_confirmation_instructions: Resend confirmation instructions
+        submit: Submit
+    passwords:
+      new:
+        forgot_your_password: Forgot your password?
+        send_reset_password: Send me reset password instructions
+      edit:
+        reset_password: Reset password
+        new_password: New password
+        characters_minimum: "%{pass} characters minimum"
+        confirm_new_password: Confirm new passoword
     registrations:
       edit:
-        home_page: "Change password"
+        change_password: "Change password"
         current_password: "Current password"
         password: "Password"
         text_password: "(we need your current password to confirm your changes)"
-        text_new_password: "(leave blank if you don't want to change it)"
-        password_confirmation: "Confirmation"
-        characters_minimum: "6 characters minimum"
+        password_confirmation: Password confirmation
+        characters_minimum: "%{pass} characters minimum"
         btn_update: "Update"
         btn_back: "Back"
       new:
+        register: Register
         password: "Password"
-        password_confirmation: "Confirmation"
-        characters_minimum: "6 characters minimum"
+        password_confirmation: Password confirmation
+        characters_minimum: "%{pass} characters minimum"
         signup: "Sign up"
     shared:
-      _links:
-        signup: "Sign up"
-        login: "Log in"
-        signin_with: "Sign in with %{OmniAuth::Utils.camelize(provider)}"
-        forgot_your_password: "Forgot your password"
+      links:
+        forgot_your_password: Forgot your password
+        not_receive_confirmation: Didn't receive confirmation instructions?
+        not_receive_unlock: Didn't receive unlock instructions?
+        sign_in_with: Sign in with %{app}
   markers:
     form:
       cancel_favorite:

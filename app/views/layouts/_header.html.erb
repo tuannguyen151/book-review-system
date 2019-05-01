@@ -3,57 +3,59 @@
     <div class="row align-items-center">
       <div class="col-6 col-xl-2">
         <h1 class="mb-0 site-logo">
-          <%= link_to "#", class: "text-white mb-0" do %>
+          <span class="text-white mb-0">
             <span class="flaticon-books"></span>
             <%= t ".title1" %>
             <span class="text-primary"><%= t ".title2" %></span>
-          <% end %>
+          </span>
         </h1>
       </div>
       <div class="col-12 col-md-10 d-none d-xl-block">
         <nav class="site-navigation position-relative text-right"
           role="navigation">
           <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-            <li class="<%= "active" if request.original_url == root_url %>">
+            <li class="<%= navigation_activation root_path %>">
               <%= link_to t(".home"), root_path %>
             </li>
             <% if current_user %>
-              <li class="has-children">
+              <li class="has-children <%= navigation_activation books_path,
+                new_book_path , favorites_path, reading_books_path,
+                  readed_books_path %>">
                 <%= link_to t(".book"), books_path %>
                 <% if current_user.admin? %>
                   <ul class="dropdown">
-                    <li>
+                    <li class="<%= navigation_activation new_book_path %>">
                       <%= link_to t(".create_book"), new_book_path %>
                     </li>
                   </ul>
                 </li>
                 <% else %>
                   <ul class="dropdown">
-                    <li>
+                    <li class="<%= navigation_activation favorites_path %>">
                       <%= link_to t(".favorite"), favorites_path %>
                     </li>
-                    <li>
+                    <li class="<%= navigation_activation reading_books_path %>">
                       <%= link_to t(".reading"), reading_books_path %>
                     </li>
-                    <li>
+                    <li class="<%= navigation_activation readed_books_path %>">
                       <%= link_to t(".readed"), readed_books_path %>
                     </li>
                   </ul>
                 </li>
                 <% end %>
+                <li class="<%= navigation_activation purchase_requests_path %>">
+                  <%= link_to t(".request_book"), purchase_requests_path %>
+                </li>
             <% else %>
-              <li>
+              <li class="<%= navigation_activation books_path %>">
                 <%= link_to t(".book"), books_path %>
               </li>
             <% end %>
             <li>
-              <%= link_to t(".request_book"), purchase_requests_path %>
-            </li>
-            <li>
               <%= link_to t(".contact"), "#" %>
             </li>
             <li class="has-children">
-              <%= link_to t(".language") %>
+              <%= link_to t(".language"), "#", class: "disable" %>
               <ul class="dropdown">
                 <li>
                   <%= link_to locale: "en" do %>
@@ -71,18 +73,22 @@
             </li>
             <span class="border-left pl-xl-2"></span>
             <% if user_signed_in? %>
-              <li class="has-children">
-                <%= link_to locale: "en" do %>
-                  <%= image_tag "icon/user.png", class: "image-language" %>
+              <li class="has-children
+                <%= navigation_activation user_path(current_user),
+                  edit_user_registration_path %>">
+                <%= link_to "#", class: "disable" do %>
+                  <%= image_tag check_avatar(current_user.user_profile), class: "image-language" %>
                   <%= current_user.email %>
                 <% end %>
                 <ul class="dropdown">
-                  <li>
+                  <li class="
+                    <%= navigation_activation user_path(current_user) %>">
                     <%= link_to user_path(current_user) do %>
                       <%= t ".personal_information"%>
                     <% end %>
                   </li>
-                  <li>
+                  <li class="
+                    <%= navigation_activation edit_user_registration_path %>">
                     <%= link_to edit_user_registration_path do %>
                       <%= t ".change_password" %>
                     <% end %>
@@ -101,7 +107,8 @@
                   <%= t ".sign_in"%>
                 <% end %>
               </li>
-              <li>
+              <li class="
+                <%= navigation_activation new_user_registration_path %>">
                 <%= link_to new_user_registration_path do %>
                   <%= t(".register") %>
                 <% end %>

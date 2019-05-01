@@ -19,4 +19,10 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def navigation_activation *url_paths
+    url_paths.each do |url_path|
+      return "active" if request.original_fullpath == url_path
+    end
+  end
 end

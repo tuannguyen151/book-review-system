@@ -1,5 +1,5 @@
 Devise.setup do |config|
-  config.mailer_sender = "hieungv.hn@gmail.com"
+  config.mailer_sender = "tuancutebaby97@gmail.com"
   require "devise/orm/active_record"
   config.case_insensitive_keys = [:email]
   config.strip_whitespace_keys = [:email]
