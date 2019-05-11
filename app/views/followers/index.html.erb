@@ -8,9 +8,9 @@
         <%= image_tag check_avatar(@user.user_profile) %>
       </div>
       <div class="user-name">
-          <span class="h2 font-weight-bold">
-            <%= @user.user_profile.name %>
-          </span>
+        <%= link_to user_path(@user), class: "h2 font-weight-bold" do %>
+          <%= @user.user_profile.name %>
+        <% end %>
       </div>
     </div>
 
@@ -21,7 +21,11 @@
           <%= ralationship_form(current_user, @user) if user_signed_in? %>
         </div>
 
-        <div class="col-md-4 pl-0 pt-3 pb-3 mt-3">
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="col-md-12 pl-0 pt-3 pb-3 mt-3">
           <div class="row m-0 pt-3 bg-white">
             <div class="border-dark mb-3 pb-1 col-md-12">
               <h3 class="text-dark font-weight-bold">
@@ -81,37 +85,41 @@
             </div>
           </div>
 
-          <div class="row m-0 mt-3 pt-3 bg-white">
-            <div class="border-dark mb-3 pb-1 col-md-12">
-              <h3 class="text-dark font-weight-bold">
-                <%= image_tag "svg/follow.svg", class: "height-30" %>
-                <%= link_to user_following_index_path(@user) do %>
-                  <%= @count_following %> <%= t ".following" %>
-                <% end %>
-              </h3>
-            </div>
-
-            <%= render partial: "user_follow",
-              collection: @following, as: :user %>
-          </div>
-
-          <div class="row m-0 mt-3 pt-3 bg-white">
-            <div class="border-dark mb-3 pb-1 col-md-12">
-              <h3 class="text-dark font-weight-bold">
-                <%= image_tag "svg/follow.svg", class: "height-30" %>
-                <%= link_to user_followers_path(@user) do %>
-                  <%= @count_followers %> <%= t ".followers" %>
-                <% end %>
-              </h3>
-            </div>
-
-            <%= render partial: "user_follow",
-              collection: @followers, as: :user %>
-          </div>
-
         </div>
 
       </div>
+
+      <div class="col-md-8">
+        <div class="col-md-12 pr-0 pl-0 pt-3 pb-3 mt-3">
+          <div class="row m-0 pt-3 bg-white">
+            <div class="border-dark mb-3 pb-1 col-md-12">
+              <h3 class="text-dark font-weight-bold">
+                <%= image_tag "svg/follow.svg", class:"height-30" %>
+                <%= t ".followers" %>
+              </h3>
+            </div>
+
+            <div class="col-md-4 mb-3 offset-md-8">
+              <%= text_field_tag nil, nil,
+                class: "form-control followers-search-form",
+                  placeholder: t(".find_users_by_name"),
+                    data: {user_id: @user.id} %>
+            </div>
+
+            <div class="col-md-12 row" id="followers">
+              <%= render partial: "following/user",
+                collection: @users %>
+            </div>
+
+            <div class="justify-content-center col-md-12 row"
+              id="paginate-followers">
+              <%= paginate @users, remote: true %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

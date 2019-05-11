@@ -257,5 +257,8 @@ jQuery(document).ready(function($) {
 	};
 	siteRangeSlider();
 	
+	$(document).on("turbolinks:load", function() {
+		siteCarousel();
+	});
 
 });

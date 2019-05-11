@@ -1,5 +1,7 @@
 @import "bootstrap/functions";
 @import "bootstrap/variables";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 $gray: #ccc;
 $cyan: #30e3ca;
@@ -17,11 +19,24 @@ $gray: #ccc;
   padding: 1.5em 1.25em;
 }
 
+@mixin border($color) {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 5vw;
+    height: 3px;
+    background: $color;
+  }
+}
+
 #bg-site-blocks {
   background-image: url("hero_2.jpg");
 }
 
-.site-navbar .site-logo > span {
+.site-navbar .site-logo>span {
   font-size: 1rem;
   font-weight: 900;
   padding-left: 10px;
@@ -71,7 +86,7 @@ a.disable {
   color: $red-black;
   background-color: $pink-b;
   border-color: $pink-bo;
-  }
+}
 
 .reviews {
 
@@ -101,8 +116,8 @@ a.disable {
 }
 
 //border image
-.image-border{
-    box-sizing: border-box;
+.image-border {
+  box-sizing: border-box;
   background-color: white;
   border-radius: 5px;
   box-shadow: 3px 3px 5px 6px #ccc;
@@ -119,6 +134,7 @@ a.disable {
   padding: 8px 20px;
   border-radius: 5px;
   font-family: 'Ubuntu', sans-serif;
+
   &:hover {
     text-decoration: none;
     background-color: darken(#f1c40f, 5%);
@@ -133,8 +149,8 @@ a.disable {
     padding: 3px 10px;
     font-weight: 300;
   }
-
 }
+
 .book-links {
 
   .btn-custom {
@@ -142,13 +158,11 @@ a.disable {
     font-weight: 300;
     margin-top: 40px;
   }
-
 }
 
-.description{
+.description {
   @include background-tile;
-    margin: 20px 0 20px;
-
+  margin: 20px 0 20px;
 }
 
 .btn-custom2 {
@@ -158,6 +172,7 @@ a.disable {
   padding: 8px 20px;
   border-radius: 5px;
   font-family: 'Ubuntu', sans-serif;
+
   &:hover {
     text-decoration: none;
     background-color: #333;
@@ -168,9 +183,11 @@ a.disable {
 
 /* New/Edit review form styles */
 
-.new-review-form, .edit-review-form {
+.new-review-form,
+.edit-review-form {
   @include background-tile;
   margin: 20px 0 20px;
+
   h1 {
     margin-top: 0;
   }
@@ -285,6 +302,7 @@ a.disable {
   @include background-tile;
   margin: 20px 0 20px;
 }
+
 .image-datatable {
   max-height: 150px;
 }
@@ -356,16 +374,14 @@ a.disable {
 }
 
 .avatar-activity {
-  height: 60px;;
+  height: 60px;
 }
 
 // Profile
 div.cover-image {
   position: relative;
   height: 40vh;
-  background-image: linear-gradient(
-    to left,#ff9a9e 0%, #fecfef 99%, #fecfef 100%
-  );
+  background-image: linear-gradient(to left, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
 
   .avatar-image {
     position: absolute;
@@ -391,14 +407,33 @@ div.cover-image {
 }
 
 .border-warning {
-  position: relative;
+  @include border($warning);
+}
 
-  &:after {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    width: 80px;
-    height: 3px;
-    background: $warning;
-  }
+.border-dark {
+  @include border($dark);
+}
+
+.height-30 {
+  height: 30px;
+  width: auto;
+}
+
+div.bg-white {
+  border: 1px solid #ef6b5734;
+  border-radius: 3px;
+}
+
+.lh-1 {
+  line-height: 1 !important;
+}
+
+img.avatar-follow {
+  width: 60px;
+  height: 60px;
+}
+
+img.img-100 {
+  width: 100px;
+  height: 100px;
 }

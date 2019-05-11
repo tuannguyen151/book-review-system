@@ -13,6 +13,10 @@ class User < ApplicationRecord
   has_many :likes
   has_many :activities
 
+  scope :order_id_desc, ->{order id: :desc}
+  scope :by_user_profile_name, (lambda do |name|
+    eager_load(:user_profile).where "name LIKE ?", "%#{name}%"
+  end)
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
     :recoverable, :rememberable, :validatable
   accepts_nested_attributes_for :user_profile

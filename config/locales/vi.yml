@@ -209,6 +209,8 @@ vi:
       address: Địa chỉ
       phone: Điện thoại
       email: Email
+      following: Người đang theo dõi
+      followers: Người theo dõi
     confirmations:
       new:
         resend_confirmation_instructions: Gửi lại hướng dẫn xác nhận
@@ -370,3 +372,27 @@ vi:
   search_users:
     index:
       user_not_found: Không tìm thấy người dùng
+  followers:
+    index:
+      user_not_found: Không thấy người dùng!
+      user_profile: Hồ sơ người dùng
+      user_information: Thông tin người dùng
+      gender: Giới tính
+      birthday: Sinh nhật
+      address: Địa chỉ
+      phone: Điện thoại
+      email: Email
+      followers: Người theo dõi
+      find_users_by_name: Tìm người dùng theo tên
+  following:
+    index:
+      user_not_found: Không thấy người dùng!
+      user_profile: Hồ sơ người dùng
+      user_information: Thông tin người dùng
+      gender: Giới tính
+      birthday: Sinh nhật
+      address: Địa chỉ
+      phone: Điện thoại
+      email: Email
+      following: Người đang theo dõi
+      find_users_by_name: Tìm người dùng theo tên

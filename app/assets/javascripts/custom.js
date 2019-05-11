@@ -147,4 +147,15 @@ $(document).on("turbolinks:load", function () {
       },
     },
   });
+
+  $(".following-search-form").on("keyup", function () {
+    var user_id = $(this).data("user-id");
+    $.getScript("/users/" + user_id + "/following?name=" + this.value);
+  });
+
+  $(".followers-search-form").on("keyup", function () {
+    var user_id = $(this).data("user-id");
+    $.getScript("/users/" + user_id + "/followers?name=" + this.value);
+  });
+
 });

@@ -209,6 +209,8 @@ en:
       address: Address
       phone: Phone
       email: Email
+      following: Following
+      followers: Followers
     confirmations:
       new:
         resend_confirmation_instructions: Resend confirmation instructions
@@ -370,3 +372,27 @@ en:
   search_users:
     index:
       user_not_found: User not found
+  followers:
+    index:
+      user_not_found: User not found!
+      user_profile: User profile
+      user_information: User information
+      gender: Gender
+      birthday: Birthday
+      address: Address
+      phone: Phone
+      email: Email
+      followers: Followers
+      find_users_by_name: Find users by name
+  following:
+    index:
+      user_not_found: User not found!
+      user_profile: User profile
+      user_information: User information
+      gender: Gender
+      birthday: Birthday
+      address: Address
+      phone: Phone
+      email: Email
+      following: Following
+      find_users_by_name: Find users by name

@@ -1,0 +1,2 @@
+$("#following").html("<%= j render partial: "user", collection: @users %>");
+$("#paginate-following").html("<%= j paginate @users, remote: true %>");

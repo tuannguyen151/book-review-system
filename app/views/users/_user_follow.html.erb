@@ -1,0 +1,6 @@
+<div class="col-4 p-2 text-center lh-1">
+  <%= image_tag check_avatar(user.user_profile), class: "mb-1 avatar-follow" %>
+  <div>
+    <%= link_to user.user_profile.name, user_path(user) %>
+  </div>
+</div>
