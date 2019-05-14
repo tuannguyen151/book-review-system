@@ -7,24 +7,26 @@
 
       <h5 class="m-0">
         <%= link_to user_path(activity.user) do %>
-          <%= activity.user.user_profile.name %>
+          <%= activity.user_name %>
         <% end %>
-        <% if activity.activitable_type == "Marker" %>
+
+        <% if activity.marker? %>
           <%= t ".mark" %>
-          <%= status_marker(activity.activitable).downcase %>
-          <%= link_to book_path(activity.activitable.book) do %>
-            <%= activity.activitable.book.title %>
+          <%= activity.status_maker %>
+          <%= link_to book_path(activity.book_marker) do %>
+            <%= activity.book_title_marker %>
           <% end %>
         <% end %>
-        <% if activity.activitable_type == "Relationship" %>
+
+        <% if activity.relationship? %>
           <%= t ".following" %>
-          <%= link_to user_path(activity.activitable.followed_id) do %>
-            <%= activity.activitable.followed.user_profile.name %>
+          <%= link_to user_path(activity.followed_relationship) do %>
+            <%= activity.followed_name_ralationship %>
           <% end %>
         <% end %>
       </h5>
 
-      <%= l activity.created_at, format: :datetime %>
+      <%= activity.created_at %>
 
       <div class="media mt-2">
         <div class="media-body">
