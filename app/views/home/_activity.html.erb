@@ -1,21 +1,56 @@
-<div class="col-md-12 h5 m-4">
-  <%= link_to user_path(activity.user) do %>
-    <%= image_tag "icon/user.png", class: "avatar-activity" %>
-    <%= activity.user.user_profile.name %>
-  <% end %>
-  <% if activity.activitable_type == "Marker" %>
-    <%= t ".mark" %>
-    <%= status_marker(activity.activitable).downcase %>
-    <%= link_to book_path(activity.activitable.book) do %>
-      <%= activity.activitable.book.title %>
-    <% end %>
-  <% end %>
-  <% if activity.activitable_type == "Relationship" %>
-    <%= t ".following" %>
-    <%= link_to user_path(activity.activitable.followed_id) do %>
-      <%= activity.activitable.followed.user_profile.name %>
-    <% end %>
-  <% end %>
-  <%= t ".at" %>
-  <%= l activity.created_at, format: :datetime %>
+<div class="col-md-12 m-4 bg-white p-3">
+  <div class="media">
+
+    <%= image_tag "icon/user.png", class: "avatar-activity mr-3" %>
+
+    <div class="media-body">
+
+      <h5 class="m-0">
+        <%= link_to user_path(activity.user) do %>
+          <%= activity.user.user_profile.name %>
+        <% end %>
+        <% if activity.activitable_type == "Marker" %>
+          <%= t ".mark" %>
+          <%= status_marker(activity.activitable).downcase %>
+          <%= link_to book_path(activity.activitable.book) do %>
+            <%= activity.activitable.book.title %>
+          <% end %>
+        <% end %>
+        <% if activity.activitable_type == "Relationship" %>
+          <%= t ".following" %>
+          <%= link_to user_path(activity.activitable.followed_id) do %>
+            <%= activity.activitable.followed.user_profile.name %>
+          <% end %>
+        <% end %>
+      </h5>
+
+      <%= l activity.created_at, format: :datetime %>
+
+      <div class="media mt-2">
+        <div class="media-body">
+
+          <div class="mt-0 mb-2">
+            <i class="fab fa-gratipay fa-lg c-gray like"
+              title="<%= t ".like" %>"></i>
+            <i class="fas fa-comment-dots fa-lg c-gray ml-3 comment"></i>
+          </div>
+
+          <div class="media mt-2">
+
+            <%= image_tag "icon/user.png", class: "mr-2 avt-repcmt" %>
+
+            <div class="media-body">
+              <%= form_with url: "#" do |f| %>
+                <%= f.text_field :content, placeholder: t(".write_a_comment"),
+                  class: "form-control", style: "border-radius: 16px" %>
+              <% end %>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>

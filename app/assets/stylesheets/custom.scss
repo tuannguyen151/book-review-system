@@ -437,3 +437,22 @@ img.img-100 {
   width: 100px;
   height: 100px;
 }
+
+.c-gray {
+  color: gray;
+}
+.like {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+
+  &:hover {
+    color: red;
+    cursor: pointer;
+    transform: scale(1.5);
+  }
+}
+
+.avt-repcmt {
+  height: 40px;
+  width: 40px;
+}

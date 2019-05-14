@@ -135,7 +135,8 @@ vi:
     activity:
       mark: đánh dấu
       following: theo dõi
-      at: lúc
+      like: Thích
+      write_a_comment: Viết bình luận
     index:
       home_page: Trang chủ
   admin:
