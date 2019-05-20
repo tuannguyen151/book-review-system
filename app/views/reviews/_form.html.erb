@@ -1,10 +1,10 @@
-<%= form_for [@book, @book.reviews.build] ,remote: true do |f| %>
- <a id="my-link">
-  <div id="rating-form" ></div>
-</a>
-  <div id="myDIV" style="display: none">
-    <%= f.text_area :content, class: "form-control animated", cols: "50", rows: "5",
-      id: "new-review" %>
+<%= form_with url: book_reviews_path(@book), scope: :review do |f| %>
+  <%= link_to "", id: "my-link" do %>
+    <div id="rating-form" ></div>
+  <% end %>
+  <div id="myDIV">
+    <%= f.text_area :content, class: "form-control animated",
+      cols: "50", rows: "5", id: "new-review" %>
     <%= f.button :submit, class: "btn btn-primary rounded mt-2" %>
   </div>
 <% end %>

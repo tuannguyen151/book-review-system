@@ -75,11 +75,9 @@ $(document).on("turbolinks:load", function () {
       return $(this).attr('data-score')
     }
   });
-  $('#my-link').on('click', function (event) {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    }
+  $('#my-link').on('click', function(e) {
+    $("#myDIV").css("display", "block");
+    e.preventDefault();
   });
 
   $("#table-favorites").css("width", "100%");

@@ -317,7 +317,7 @@ vi:
       btn_del: Xóa
       mess: Chưa có đánh giá nào, bạn có muốn đánh giá đầu tiên không!
       mess_del: Bạn có chắc không?
-  create:
+    create:
       create_success: Đánh giá đã được tạo thành công
       create_failure: Đã xảy ra lỗi khi tạo đánh giá
   book_price: $%{price}

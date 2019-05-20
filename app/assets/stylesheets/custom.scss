@@ -198,6 +198,10 @@ a.disable {
 
 /* New/Edit review form styles */
 
+#myDIV {
+  display: none;
+}
+
 .new-review-form,
 .edit-review-form {
   @include background-tile;

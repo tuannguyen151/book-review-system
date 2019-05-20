@@ -1,0 +1,9 @@
+<div>
+  <%= @book.count_reviews %> <%= t ".reviews" %>
+</div>
+<span class="average-review-rating"
+  data-score="<%= @book.average_reviews %>">
+</span>
+<i>
+  (<%= @book.average_reviews %> <%= t ".stars" %>)
+</i>

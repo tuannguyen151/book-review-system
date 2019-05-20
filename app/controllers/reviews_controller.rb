@@ -4,10 +4,9 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: %i(new edit create)
 
   def create
-    @review = Review.new review_params
-    @review.user_id = current_user.id
-    @review.book_id = @book.id
-
+    @review = ReviewsService.new(
+      review_params: review_params, user: current_user, book: @book
+    ).builder
     respond_to do |format|
       if @review.save
         flash[:success] = t ".create_success"
@@ -46,12 +45,12 @@ class ReviewsController < ApplicationController
   end
 
   def find_book
-    return if @book = Book.find(params[:book_id])
+    return if @book = BookDecorator.decorate(Book.find params[:book_id])
     flash[:danger] = t ".not_found-b"
     redirect_back fallback_location: books_path
   end
 
   def review_params
-    params.require(:review).permit(:rate, :content)
+    params.require(:review).permit :rate, :content
   end
 end

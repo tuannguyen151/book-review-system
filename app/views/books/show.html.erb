@@ -72,24 +72,19 @@
             <% if @reviews.blank? %>
               <h6><%= t ".notify_no_reviews" %></h6>
             <% else %>
-              <div>
-                <%= @book.count_reviews %> <%= t ".reviews" %>
+              <div class="average-reviews">
+                <%= render "average_reviews", object: @book %>
               </div>
-              <span class="average-review-rating"
-                data-score="<%= @book.average_reviews %>">
-              </span>
-              <i>
-                (<%= @book.average_reviews %> <%= t ".stars" %>)
-              </i>
             <% end %>
             <hr>
-
-            <h4 class="font-weight-bold text-success">
-              <%= t ".can_review" %>
-            </h4>
-            <div class="">
-              <%= render "reviews/form" %>
-            </div>
+            <% if !@book.review_of_current_user? %>
+              <h4 class="font-weight-bold text-success">
+                <%= t ".can_review" %>
+              </h4>
+              <div class="review-form">
+                <%= render "reviews/form" %>
+              </div>
+            <% end %>
           </div>
 
         </div>
@@ -117,6 +112,8 @@
             <% if @reviews.blank? %>
               <h6><%= t ".notify_no_reviews" %></h6>
             <% end %>
+            <div class="reviews-first">
+            </div>
             <%= render @reviews %>
           </div>
           <div class="" id="kaminari-list-reviews">
