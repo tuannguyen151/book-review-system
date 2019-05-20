@@ -1,7 +1,6 @@
 module MarkersHelper
-  def marker_form book_id, status, user
-    return unless user.instance_of? User
-    if @marker = user.markers.find_by(book_id: book_id, status: status)
+  def marker_form book, status
+    if @marker = current_user.markers.find_by(book: book, status: status)
       render "markers/form/cancel_#{@marker.status}", object: @marker
     else
       render "markers/form/#{status}"

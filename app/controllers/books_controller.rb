@@ -26,14 +26,13 @@ class BooksController < ApplicationController
   end
 
   def show
-    @reviews = Review.where(book_id: @book.id).order_desc.page(params[:page])
-                     .per Settings.limit_review
-    @average_review = if @reviews.blank?
-                        0
-                      else
-                        Review.where(book_id: @book.id).average(:rate)
-                              .round(Settings.average_rate)
-                      end
+    review_of_current_user = @book.reviews.where(user: current_user)
+    @reviews = @book.reviews.where.not(user: current_user)
+                    .includes(user: :user_profile).updated_at_desc
+    @reviews = Kaminari.paginate_array(review_of_current_user + @reviews)
+                       .page(params[:page]).per Settings.limit_review
+    @reviews = ReviewDecorator.decorate_collection @reviews
+    @book = BookDecorator.decorate @book
   end
 
   def edit; end

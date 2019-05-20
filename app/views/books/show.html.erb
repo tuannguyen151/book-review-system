@@ -14,16 +14,16 @@
     <% if can? Marker::AUTHORIZE_USER, Marker %>
       <div class="row bg-white col-md-12 m-0 mt-5 mb-5">
         <div class="col-md-3 mb-3 mt-3" id="marker-favorite">
-          <%= marker_form @book.id, :favorite, current_user %>
+          <%= marker_form @book, :favorite %>
         </div>
         <div class="col-md-3 mb-3 mt-3" id="marker-readed">
-          <%= marker_form @book.id, :readed, current_user %>
+          <%= marker_form @book, :readed %>
         </div>
         <div class="col-md-3 mb-3 mt-3" id="marker-reading">
-          <%= marker_form @book.id, :reading, current_user %>
+          <%= marker_form @book, :reading %>
         </div>
         <div class="col-md-3 mb-3 mt-3" id="marker-purchase_request">
-          <%= marker_form @book.id, :purchase_request, current_user %>
+          <%= marker_form @book, :purchase_request %>
         </div>
       </div>
     <% end %>
@@ -69,15 +69,19 @@
                 <%= t ".average_rating" %>
               </h4>
             </div>
-            <div>
-              <%= @book.reviews.count %> <%= t ".reviews" %>
-            </div>
-            <span class="average-review-rating"
-              data-score="<%= @average_review %>">
-            </span>
-            <i>
-              (<%= @average_review %> <%= t ".stars" %>)
-            </i>
+            <% if @reviews.blank? %>
+              <h6><%= t ".notify_no_reviews" %></h6>
+            <% else %>
+              <div>
+                <%= @book.count_reviews %> <%= t ".reviews" %>
+              </div>
+              <span class="average-review-rating"
+                data-score="<%= @book.average_reviews %>">
+              </span>
+              <i>
+                (<%= @book.average_reviews %> <%= t ".stars" %>)
+              </i>
+            <% end %>
             <hr>
 
             <h4 class="font-weight-bold text-success">
@@ -110,6 +114,9 @@
             </h4>
           </div>
           <div class="" id="list-reviews">
+            <% if @reviews.blank? %>
+              <h6><%= t ".notify_no_reviews" %></h6>
+            <% end %>
             <%= render @reviews %>
           </div>
           <div class="" id="kaminari-list-reviews">

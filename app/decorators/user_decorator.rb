@@ -49,5 +49,4 @@ class UserDecorator < Draper::Decorator
   def user_profile_address
     user_profile.address
   end
-
 end

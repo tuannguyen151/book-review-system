@@ -179,6 +179,7 @@ vi:
       can_review: Bạn có thể đánh giá dưới đây
       description: Mô tả nội dung cuốn sách
       community_reviews: Đánh giá của cộng đồng
+      notify_no_reviews: Chưa có đánh giá nào! Bạn sẽ là người đầu tiên?
     edit:
       not_found: Không tìm thấy sách cần chỉnh sửa
       edit_book: Chỉnh sửa sách

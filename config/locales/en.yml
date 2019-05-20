@@ -179,6 +179,7 @@ en:
       can_review: You can rate below
       description: Describe content of the book
       community_reviews: Community reviews
+      notify_no_reviews: No reviews just yet! Will you be the first?
     edit:
       not_found: No find book needed edit
       edit_book: Edit book

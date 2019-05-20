@@ -149,14 +149,12 @@ a.disable {
   background-color: white;
   border: 1px solid darken(#f1c40f, 5%);
   padding: 8px 20px;
-  border-radius: 5px;
-  font-family: "Ubuntu", sans-serif;
+  transition: 0.2s;
 
   &:hover {
     text-decoration: none;
     background-color: darken(#f1c40f, 5%);
     color: white;
-    transition: 0.5s;
   }
 }
 
@@ -490,4 +488,9 @@ img.img-100 {
 
 input.write_comment{
   border-radius: 50px
+}
+
+/** Reviews **/
+.time-review {
+  font-size: 0.7rem;
 }
