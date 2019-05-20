@@ -247,6 +247,23 @@ vi:
         not_receive_confirmation: Không nhận được hướng dẫn xác nhận?
         not_receive_unlock: Không nhận được hướng dẫn mở khoá?
         sign_in_with: Đăng nhập bằng %{app}
+    modal_edit_profile:
+      edit_profile: Chỉnh sửa hồ sơ
+      avatar: Hình đại diện
+      name: Tên
+      gender: Giới tính
+      male: Nam
+      female: Nữ
+      birthday: Sinh nhật
+      phone: Điện thoại
+      address: Địa chỉ
+      save_changes: Lưu thay đổi
+      close: Đóng
+  user_profiles:
+    update:
+      update_profile_success: Cập nhật hồ sơ thành công
+      update_profile_failure: Cập nhật hồ sơ thất bại
+      user_not_found: Không tìm thấy người dùng
   markers:
     form:
       cancel_favorite:

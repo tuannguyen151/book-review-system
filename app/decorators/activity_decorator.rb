@@ -1,6 +1,10 @@
 class ActivityDecorator < Draper::Decorator
   delegate_all
 
+  def avt_user
+    helpers.check_avatar object.user.user_profile
+  end
+
   def user_name
     object.user.user_profile.name
   end

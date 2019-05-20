@@ -247,6 +247,23 @@ en:
         not_receive_confirmation: Didn't receive confirmation instructions?
         not_receive_unlock: Didn't receive unlock instructions?
         sign_in_with: Sign in with %{app}
+    modal_edit_profile:
+      edit_profile: Edit profile
+      avatar: Avatar
+      name: Name
+      gender: Gender
+      male: Male
+      female: Female
+      birthday: Birthday
+      phone: Phone
+      address: Address
+      save_changes: Save changes
+      close: Close
+  user_profiles:
+    update:
+      update_profile_success: Update profile successfully
+      update_profile_failure: Update profile failure
+      user_not_found: User not found!
   markers:
     form:
       cancel_favorite:

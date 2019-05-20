@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       get :autocomplete_user_profile_name, on: :collection
       resources :following, only: :index
       resources :followers, only: :index
+      resources :user_profiles, only: %i(update)
     end
     resources :purchase_requests, path: "purchase-requests",
       only: %i(index destroy)

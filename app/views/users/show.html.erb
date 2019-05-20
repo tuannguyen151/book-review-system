@@ -1,24 +1,33 @@
-<% provide :title, @user.user_profile.name %>
+<% provide :title, @user.user_profile_name %>
 <% provide :icon, "icon/books.png"%>
 <div class="site-section bg-light" id="main-content">
   <div class="container">
 
     <div class="col-md-12 cover-image">
       <div class="avatar-image">
-        <%= image_tag check_avatar(@user.user_profile) %>
+        <%= image_tag @user.user_profile_avatar %>
       </div>
       <div class="user-name">
           <span class="h2 font-weight-bold">
-            <%= @user.user_profile.name %>
+            <%= @user.user_profile_name %>
           </span>
       </div>
+      <% if current_user == @user %>
+        <div class="btn-edit-profile">
+          <%= button_tag class: "btn btn-primary",
+            data: {toggle: "modal", target: "#edit-profile"} do %>
+            <i class="fas fa-pencil-alt"></i>
+            <%= t ".edit_profile" %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
     <div class="row mt-5">
       <div class="col-md-12">
 
         <div id="follow-form">
-          <%= ralationship_form(current_user, @user) if user_signed_in? %>
+          <%= @user.relationship_form current_user %>
         </div>
 
         <div class="col-md-4 pl-0 pt-3 pb-3 mt-3">
@@ -36,7 +45,7 @@
                 <%= t ".gender" %>:
               </span>
               <span class="h5 text-danger font-weight-bold">
-                <%= gender @user.user_profile %>
+                <%= @user.user_profile_gender %>
               </span>
             </div>
 
@@ -46,7 +55,7 @@
                 <%= t ".birthday" %>:
               </span>
               <span class="h5 text-danger font-weight-bold">
-                <%= l @user.user_profile.birthday, format: :date %>
+                <%= @user.user_profile_birthday %>
               </span>
             </div>
 
@@ -56,7 +65,7 @@
                 <%= t ".phone" %>:
               </span>
               <span class="h5 text-danger font-weight-bold">
-                <%= @user.user_profile.phone %>
+                <%= @user.user_profile_phone %>
               </span>
             </div>
 
@@ -76,7 +85,7 @@
                 <%= t ".address" %>:
               </span>
               <span class="h5 text-danger font-weight-bold">
-                <%= @user.user_profile.address %>
+                <%= @user.user_profile_address %>
               </span>
             </div>
           </div>
@@ -86,13 +95,13 @@
               <h3 class="text-dark font-weight-bold">
                 <%= image_tag "svg/follow.svg", class: "height-30" %>
                 <%= link_to user_following_index_path(@user) do %>
-                  <%= @count_following %> <%= t ".following" %>
+                  <%= @user.count_following %> <%= t ".following" %>
                 <% end %>
               </h3>
             </div>
 
             <%= render partial: "user_follow",
-              collection: @following, as: :user %>
+              collection: @user.user_following, as: :user %>
           </div>
 
           <div class="row m-0 mt-3 pt-3 bg-white">
@@ -100,13 +109,13 @@
               <h3 class="text-dark font-weight-bold">
                 <%= image_tag "svg/follow.svg", class: "height-30" %>
                 <%= link_to user_followers_path(@user) do %>
-                  <%= @count_followers %> <%= t ".followers" %>
+                  <%= @user.count_followers %> <%= t ".followers" %>
                 <% end %>
               </h3>
             </div>
 
             <%= render partial: "user_follow",
-              collection: @followers, as: :user %>
+              collection: @user.user_followers, as: :user %>
           </div>
 
         </div>
@@ -115,3 +124,5 @@
     </div>
   </div>
 </div>
+
+<%= render "modal_edit_profile", resource: @user %>

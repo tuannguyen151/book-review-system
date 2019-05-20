@@ -1,0 +1,82 @@
+<div class="modal fade" id="edit-profile" tabindex="-1" role="dialog"
+  aria-labelledby="edit-profileTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          <%= t ".edit_profile" %>
+        </h5>
+        <%= button_tag class: "close", "aria-label": "Close",
+          data: {dismiss: "modal", target: "#edit-profile"} do %>
+          <span aria-hidden="true">&times;</span>
+        <% end %>
+      </div>
+      <%= form_with url: user_user_profile_path(@user, @user.user_profile),
+          model: @user.user_profile, method: :patch, local: true do |f| %>
+        <div class="modal-body">
+            <div class="col-md-12">
+              <span class="h6">
+                <i class="far fa-image"></i>
+                <%= t ".avatar" %>
+              </span>
+              <%= f.file_field :avatar_url, accept: "image/jpeg, image/jpg,
+                image/png",class: "photo_upload d-flex" %>
+              <%= image_tag "", class: "hidden image_to_upload mt-2" %>
+            </div>
+
+            <div class="col-md-12">
+              <div class="h6">
+                <i class="fas fa-user"></i>
+                <%= t ".name" %>
+              </div>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <div class="h6">
+                <i class="fas fa-transgender"></i>
+                <%= t ".gender" %>
+              </div>
+              <span class="ml-5">
+                <%= f.radio_button :gender, "male" %>
+                <%= label :gender, t(".male") %>
+              </span>
+              <span class="ml-5">
+                <%= f.radio_button :gender, "female" %>
+                <%= label :gender, t(".female") %>
+              <span>
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <div class="h6">
+                <i class="fas fa-birthday-cake"></i>
+                <%= t ".birthday" %>
+              </div>
+              <%= f.date_field :birthday, class: "form-control" %>
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <div class="h6">
+                <i class="fas fa-phone-square"></i>
+                <%= t ".phone" %>
+              </div>
+              <%= f.text_field :phone, class: "form-control" %>
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <div class="h6">
+                <i class="fas fa-map-pin ml-1 mr-1"></i>
+                <%= t ".address" %>
+              </div>
+              <%= f.text_field :address, class: "form-control" %>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <%= button_tag t(".close"), class: "btn btn-secondary",
+            data: {dismiss: "modal"} %>
+          <%= f.button t(".save_changes"), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

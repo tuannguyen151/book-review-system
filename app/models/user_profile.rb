@@ -13,6 +13,8 @@ class UserProfile < ApplicationRecord
     allow_blank: true,
       format: {with: /\A\d+\z/, message: I18n.t("activerecord.number")}
 
+  mount_uploader :avatar_url, AvatarUrlUploader
+
   private
 
   def min_date

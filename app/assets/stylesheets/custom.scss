@@ -3,6 +3,24 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&display=swap&subset=vietnamese");
+
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i&display=swap&subset=vietnamese");
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans&display=swap&subset=vietnamese");
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.form-control {
+  font-family: "Fira Sans", sans-serif;
+}
+
 $gray: #ccc;
 $cyan: #30e3ca;
 $red-black: #ff0062;
@@ -37,11 +55,10 @@ $gray: #ccc;
 }
 
 .site-navbar .site-logo>span {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 900;
   padding-left: 10px;
   position: absolute;
-  top: -5px;
 }
 
 a.disable {
@@ -133,7 +150,7 @@ a.disable {
   border: 1px solid darken(#f1c40f, 5%);
   padding: 8px 20px;
   border-radius: 5px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 
   &:hover {
     text-decoration: none;
@@ -171,7 +188,7 @@ a.disable {
   border: 1px solid #222;
   padding: 8px 20px;
   border-radius: 5px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 
   &:hover {
     text-decoration: none;
@@ -385,8 +402,8 @@ div.cover-image {
 
   .avatar-image {
     position: absolute;
-    bottom: -15%;
-    left: 2%;
+    bottom: -50px;
+    left: 20px;
     height: 30vh;
     width: 30vh;
 
@@ -400,9 +417,19 @@ div.cover-image {
 
   .user-name {
     position: absolute;
-    left: 20vw;
-    bottom: 5%;
+    left: 320px;
+    bottom: 0;
     color: #ff4444;
+  }
+
+  .btn-edit-profile{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    .btn-primary{
+      border-radius: 8px;
+    }
   }
 }
 
@@ -455,4 +482,12 @@ img.img-100 {
 .avt-repcmt {
   height: 40px;
   width: 40px;
+}
+
+.form-control:focus {
+  color: $danger;
+}
+
+input.write_comment{
+  border-radius: 50px
 }
