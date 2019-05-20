@@ -36,6 +36,12 @@ en:
       l12: reading books per pages
       l4: No reading books available
       l52: total reading book
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        precision: 0
+        unit: VNĐ
   layouts:
     application:
       book_review: Book review
@@ -117,6 +123,7 @@ en:
   time:
     formats:
       datetime: "%H:%M:%S %d/%m/%y"
+      short_time: "%d-%m-%Y"
   devise:
     sessions:
       user:

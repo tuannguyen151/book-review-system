@@ -36,6 +36,12 @@ vi:
       l12: sách đang đọc mỗi trang
       l4: Không có sách đang đọc
       l52: tất cả sách đang đọc
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        precision: 0
+        unit: VNĐ
   layouts:
     application:
       book_review: Đánh giá sách
@@ -117,6 +123,7 @@ vi:
   time:
     formats:
       datetime: "%H:%M:%S %d/%m/%y"
+      short_time: "%d-%m-%Y"
   devise:
     sessions:
       user:

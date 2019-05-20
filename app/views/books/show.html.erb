@@ -56,11 +56,11 @@
             </div>
             <div>
               <span><%= t ".publish_date" %>:</span>
-              <%= l @book.publish_date, format: :datetime %>
+              <%= l @book.publish_date, format: :short_time %>
             </div>
             <div>
               <span><%= t ".price" %>:</span>
-              <%= @book.price %> VND
+              <%= number_to_currency @book.price %>
             </div>
             <hr>
 

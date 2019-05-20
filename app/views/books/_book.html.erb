@@ -23,7 +23,7 @@
       </address>
       <address>
         <%= t ".price" %>:
-        <%= book.price %>
+        <%= number_to_currency book.price %>
       </address>
       <span>
         <% if can? Book::AUTHORIZE_ADMIN, book %>
