@@ -1,0 +1,20 @@
+$(".average-reviews").html(`
+  <%= j render 'books/average_reviews', object: @book %>
+`);
+$(".review-form").hide().html("<%= j render "shared/flash" %>").fadeIn();
+$(".reviews-js:first").html("");
+$(".reviews-js:nth-child(2)").hide().html("<%= j render @review %>").fadeIn();
+$(".review-rating").raty({
+  readOnly: true,
+  score: function () {
+    return $(this).attr("data-score");
+  },
+  path: "/assets/"
+});
+$('.average-review-rating').raty({
+  readOnly: true,
+  path: '/assets/',
+  score: function () {
+    return $(this).attr('data-score')
+  }
+});

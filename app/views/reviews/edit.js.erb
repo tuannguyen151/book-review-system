@@ -1,0 +1,22 @@
+$(".reviews-js:first").hide().html(`
+   <h4 class="font-weight-bold text-success mt-5">
+      <%= t ".edit_review" %>
+   </h4>
+   <%= form_with url: book_review_path(@book, @review), scope: :review,
+      method: :patch, model: @review, class: "mr-3" do |f| %>
+      <%= link_to "", id: "my-link" do %>
+         <div id="rating-form-edit" class="mb-2"></div>
+      <% end %>
+      <div>
+         <%= f.text_area :content, class: "form-control animated",
+            cols: "50", rows: "5", id: "new-review" %>
+         <%= f.button :submit, class: "btn btn-primary rounded mt-2" %>
+      </div>
+   <% end %>
+   <hr>
+`).fadeIn();
+$('#rating-form-edit').raty({
+   path: '/assets/',
+   scoreName: 'review[rate]',
+   score: <%= @review.rate %>,
+});

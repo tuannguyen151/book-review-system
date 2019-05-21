@@ -75,7 +75,7 @@ $(document).on("turbolinks:load", function () {
       return $(this).attr('data-score')
     }
   });
-  $(".review-form").on("click", "#my-link", function(e) {
+  $(document).on("click", "#my-link", function(e) {
     $("#myDIV").css("display", "block");
     e.preventDefault();
   });

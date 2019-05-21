@@ -1,4 +1,5 @@
-<%= form_with url: book_reviews_path(@book), scope: :review do |f| %>
+<%= form_with url: book_reviews_path(@book), scope: :review,
+  model: @review do |f| %>
   <%= link_to "", id: "my-link" do %>
     <div id="rating-form" ></div>
   <% end %>

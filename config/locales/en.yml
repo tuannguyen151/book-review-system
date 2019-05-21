@@ -320,6 +320,10 @@ en:
     create:
       create_success: The review was successfully created
       create_failure: An error occurred while creating the review
+    edit:
+      edit_review: Edit review
+    update:
+      update_success: The review was successfully updated
     destroy:
       can_review: You can rate below
   book_price: $%{price}
