@@ -4,7 +4,7 @@ class UserProfile < ApplicationRecord
   belongs_to :user
 
   validate :min_date, :max_date
-  validates :birthday, presence: true
+  validates :gender, presence: true
   validates :name, presence: true, length: {maximum: Settings.name_maximum},
     uniqueness: true
   validates :address, length: {maximum: Settings.string_maximum},

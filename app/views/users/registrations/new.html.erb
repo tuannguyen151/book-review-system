@@ -23,6 +23,34 @@
             </div>
           </div>
 
+          <%= f.fields_for :user_profile do |ff| %>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <%= ff.label t(".name"), class: "text-black" %>
+                <%= ff.text_field :name, autofocus: true,
+                  autocomplete: "name", class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <div>
+                  <%= ff.label t(".gender"), class: "text-black" %>
+                </div>
+                <span class="ml-5">
+                  <%= ff.radio_button :gender, "male" %>
+                  <%= label :gender, t(".male") %>
+                </span>
+                <span class="ml-5">
+                  <%= ff.radio_button :gender, "female" %>
+                  <%= label :gender, t(".female") %>
+                <span>
+              </div>
+            </div>
+
+          <% end %>
+
           <div class="row form-group">
             <div class="col-md-12">
               <%= f.label :password, t(".password"), class: "text-black" %>

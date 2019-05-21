@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
@@ -34,6 +35,13 @@ class ApplicationController < ActionController::Base
       admin_root_path
     else
       root_path
+    end
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit :sign_up do |user|
+      user.permit :email, :password, :password_confirmation,
+        user_profile_attributes: [:name, :birthday, :gender]
     end
   end
 end

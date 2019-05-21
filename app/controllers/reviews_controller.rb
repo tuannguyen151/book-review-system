@@ -52,13 +52,15 @@ class ReviewsController < ApplicationController
   private
 
   def find_review
-    return if @review = ReviewDecorator.decorate(Review.find_by id: params[:id])
+    return if @review = ReviewDecorator.decorate(
+      Review.find_by(id: params[:id])
+    )
     flash[:danger] = t ".review_not_found"
     redirect_back fallback_location: books_path
   end
 
   def find_book
-    return if @book = BookDecorator.decorate(Book.find params[:book_id])
+    return if @book = BookDecorator.decorate(Book.find(params[:book_id]))
     flash[:danger] = t ".book_not_found"
     redirect_back fallback_location: books_path
   end

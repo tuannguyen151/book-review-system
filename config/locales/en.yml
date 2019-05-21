@@ -249,6 +249,10 @@ en:
         password_confirmation: Password confirmation
         characters_minimum: "%{pass} characters minimum"
         signup: "Sign up"
+        name: Name
+        gender: Gender
+        male: Male
+        female: Female
     shared:
       links:
         forgot_your_password: Forgot your password

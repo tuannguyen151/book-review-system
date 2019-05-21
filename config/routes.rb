@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => "/ckeditor"
   scope "(:locale)", locale: /en|vi/ do
     root "home#index"
-    devise_for :users, controllers: {sessions: "users/sessions"},
+    devise_for :users, controllers: {sessions: "users/sessions", registrations: "registrations"},
       path: "", path_names: {edit: "change_password", sign_up: "register"}
     namespace :admin do
       root "home#index"

@@ -249,6 +249,10 @@ vi:
         password_confirmation: Xác nhận mật khẩu
         characters_minimum: Tối thiểu %{pass} ký tự
         signup: "Đăng ký"
+        name: Tên
+        gender: Giới tính
+        male: Nam
+        female: Nữ
     shared:
       links:
         forgot_your_password: Quên mật khẩu
