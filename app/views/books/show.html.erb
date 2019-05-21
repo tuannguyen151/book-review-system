@@ -78,11 +78,13 @@
             <% end %>
             <hr>
             <% if !@book.review_of_current_user? %>
-              <h4 class="font-weight-bold text-success">
-                <%= t ".can_review" %>
-              </h4>
               <div class="review-form">
-                <%= render "reviews/form" %>
+                <h4 class="font-weight-bold text-success">
+                  <%= t ".can_review" %>
+                </h4>
+                <div>
+                  <%= render "reviews/form" %>
+                </div>
               </div>
             <% end %>
           </div>

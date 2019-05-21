@@ -1,3 +1,23 @@
-$('.destroy-product').bind('ajax:success', function() {
-   $(this).closest('.edit_review').fadeOut();
+$(".destroy-product").closest(".review-info").fadeOut();
+$(".review-form").html(`
+   <h4 class="font-weight-bold text-success">
+   <%= t ".can_review" %>
+   </h4>
+   <div>
+   <%= j render "reviews/form" %>
+   </div>
+`).fadeOut().fadeIn();
+$('#rating-form').raty({
+   path: '/assets/',
+   scoreName: 'review[rate]'
+});
+$(".average-reviews").html(`
+  <%= j render 'books/average_reviews', object: @book %>
+`).fadeOut().fadeIn();
+$('.average-review-rating').raty({
+  readOnly: true,
+  path: '/assets/',
+  score: function () {
+    return $(this).attr('data-score')
+  }
 });

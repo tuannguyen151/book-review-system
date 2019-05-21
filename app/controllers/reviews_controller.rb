@@ -29,10 +29,14 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review.destroy
     respond_to do |format|
+      if @review.destroy
+        flash[:success] = t ".destroy_success"
+      else
+        flash[:danger] = t ".destroy_failure"
+      end
       format.html{redirect_to book_path(@book)}
-      format.js{render layout: false}
+      format.js
     end
   end
 
@@ -40,13 +44,13 @@ class ReviewsController < ApplicationController
 
   def find_review
     return if @review = Review.find_by(id: params[:id])
-    flash[:danger] = t ".not_found-r"
+    flash[:danger] = t ".review_not_found"
     redirect_back fallback_location: books_path
   end
 
   def find_book
     return if @book = BookDecorator.decorate(Book.find params[:book_id])
-    flash[:danger] = t ".not_found-b"
+    flash[:danger] = t ".book_not_found"
     redirect_back fallback_location: books_path
   end
 

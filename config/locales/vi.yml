@@ -320,6 +320,8 @@ vi:
     create:
       create_success: Đánh giá đã được tạo thành công
       create_failure: Đã xảy ra lỗi khi tạo đánh giá
+    destroy:
+      can_review: Bạn có thể đánh giá dưới đây
   book_price: $%{price}
   purchase_requests:
     request:

@@ -320,6 +320,8 @@ en:
     create:
       create_success: The review was successfully created
       create_failure: An error occurred while creating the review
+    destroy:
+      can_review: You can rate below
   book_price: $%{price}
   purchase_requests:
     request:
