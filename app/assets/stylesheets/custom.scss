@@ -13,7 +13,16 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
   font-family: "Josefin Sans", sans-serif;
 }
 
@@ -424,12 +433,12 @@ div.cover-image {
     color: #ff4444;
   }
 
-  .btn-edit-profile{
+  .btn-edit-profile {
     position: absolute;
     bottom: 10px;
     right: 10px;
 
-    .btn-primary{
+    .btn-primary {
       border-radius: 8px;
     }
   }
@@ -470,6 +479,7 @@ img.img-100 {
 .c-gray {
   color: gray;
 }
+
 .like {
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -490,11 +500,30 @@ img.img-100 {
   color: $danger;
 }
 
-input.write_comment{
+input.write_comment {
   border-radius: 50px
 }
 
 /** Reviews **/
 .time-review {
   font-size: 0.7rem;
+}
+
+li.ui-menu-item {
+  div.ui-menu-item-wrapper {
+    &:hover {
+      background: orange;
+      border: none;
+    }
+
+    a {
+      width: inherit;
+    }
+  }
+}
+
+.ui-autocomplete {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

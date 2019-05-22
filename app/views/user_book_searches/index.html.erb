@@ -1,0 +1,49 @@
+<% provide :title, t(".search") %>
+<% provide :icon, "icon/books.png"%>
+<div class="site-section bg-light" id="main-content">
+  <div class="container">
+    <div class="row m-0 p-0">
+
+      <div class="col-6 p-4">
+        <div class="row mb-5">
+          <div class="col-md-7 text-left border-primary">
+            <h2 class="font-weight-light text-primary">
+              <%= t ".user" %>
+            </h2>
+          </div>
+        </div>
+        <div class="row mt-5 bg-white" id="list-books">
+          <% @users.each do |user| %>
+          <div class="col-md-4 p-3 text-center lh-1">
+            <%= image_tag user.avt_user, class: "mb-1 img-100" %>
+            <div>
+              <%= link_to user.user_profile_name, user_path(user) %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-6 p-4">
+        <div class="row mb-5">
+          <div class="col-md-7 text-left border-primary">
+            <h2 class="font-weight-light text-primary">
+              <%= t ".book" %>
+            </h2>
+          </div>
+        </div>
+        <div class="row mt-5 bg-white" id="list-users">
+          <% @books.each do |book| %>
+          <div class="col-md-4 p-3 text-center lh-1">
+            <%= image_tag book.cover_image_asset, class: "mb-1 img-100" %>
+            <div>
+              <%= link_to book.title, book_path(book) %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

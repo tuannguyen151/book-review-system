@@ -1,0 +1,44 @@
+var users = [
+  <% @users.each do |u| %>
+    {
+      id: "<%= u.id %>",
+      label: "<%= u.user_profile.name %>",
+      image: "<%= u.avt_user %>",
+    },
+  <% end %>
+];
+var books = [
+  <% @books.each do |b| %>
+    {
+      id: "<%= b.id %>",
+      label: "<%= b.title %>",
+      cover_image: "<%= b.cover_image_asset %>",
+      book: true
+    },
+  <% end %>
+];
+
+var data = users.concat(books).sort(function (a, b) {
+  return a.label.localeCompare(b.label);;
+});
+
+$("#content-search").autocomplete({
+  source: data,
+  delay: 0,
+}).data("ui-autocomplete")._renderItem = function(ul, item) {
+  if (item.book === true) {
+    var li_content = "<div><a href='/books/"+ item.id +"'>"
+      + "<img src='" + item.cover_image + "' class='mr-3 height-30'>"
+      + item.label
+      + " <i class='text-danger'>(" + I18n.t("js.book") + ")</i>"
+      + "</a></div>";
+  } else {
+    var li_content = "<div><a href='/users/"+ item.id +"'>"
+      + "<img src='" + item.image + "' class='mr-3 height-30'>"
+      + item.label
+      + "</a></div>";
+  }
+  return $("<li>")
+    .append(li_content)
+    .appendTo(ul);
+};

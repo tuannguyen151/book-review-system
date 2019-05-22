@@ -17,8 +17,6 @@ Rails.application.routes.draw do
         resources :reading_books, only: %i(index destroy)
       end
     end
-    resources :search_books, only: %i(index)
-    resources :search_users, only: %i(index)
     resources :users, only: %i(show) do
       resources :relationships, only: %i(create destroy)
       get :autocomplete_user_profile_name, on: :collection
@@ -28,5 +26,6 @@ Rails.application.routes.draw do
     end
     resources :purchase_requests, path: "purchase-requests",
       only: %i(index destroy)
+    resources :user_book_searches, only: :index
   end
 end

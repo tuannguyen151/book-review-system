@@ -1,5 +1,6 @@
 vi:
   js:
+    book: Sách
     relationships:
       follow: Theo dõi
       notification_follow: Bạn đã theo dõi người dùng thành công
@@ -67,10 +68,8 @@ vi:
     site_blocks:
       title: Đọc, đánh giá và yêu cầu mua sách
       maxim: Chúng tôi sẽ tạo cảm giác trải nghiệm tuyệt vời cho bạn !
-      search_book: Bạn đang tìm kiếm cuốn sách gì?
-      search_user: Bạn đang muốn tìm kiếm tên người dùng là gì?
-      btn_search_book: Tìm kiếm sách
-      btn_search_user: Tìm kiếm người dùng
+      search_content: Bạn có thể tìm kiếm theo tên sách hoặc tên người dùng?
+      search: Tìm kiếm
     statistical:
       users: Người dùng
       books: Sách
@@ -432,3 +431,8 @@ vi:
       email: Email
       following: Người đang theo dõi
       find_users_by_name: Tìm người dùng theo tên
+  user_book_searches:
+    index:
+      book: Kết quả tìm kiếm sách
+      user: Kết quả tìm kiếm người dùng
+      search: Kết quả tìm kiếm

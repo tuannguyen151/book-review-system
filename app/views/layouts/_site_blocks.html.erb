@@ -15,37 +15,16 @@
           </div>
         </div>
 
-        <div class="form-search-wrap mb-3" data-aos="fade-up"
-          data-aos-delay="200">
-          <%= form_with url: search_books_path, method: :get,
-            local: true do |f| %>
-            <div class="row align-items-center">
-              <div class="col-lg-12 mb-4 mb-xl-0 col-xl-9">
-                <%= f.autocomplete_field :title,
-                  autocomplete_book_title_books_path,
-                    class: "form-control rounded",
-                      placeholder: t(".search_book") %>
-              </div>
-              <div class="col-lg-12 col-xl-3 ml-auto text-right">
-                <%= f.submit t(".btn_search_book"),
-                  class: "btn btn-primary btn-block rounded"%>
-              </div>
-            </div>
-          <% end %>
-        </div>
-
         <div class="form-search-wrap" data-aos="fade-up" data-aos-delay="200">
-          <%= form_with url: search_users_path, method: :get,
+          <%= form_with url: user_book_searches_path, method: :get,
             local: true do |f| %>
             <div class="row align-items-center">
-              <div class="col-lg-12 mb-4 mb-xl-0 col-xl-9">
-                <%= f.autocomplete_field :name,
-                  autocomplete_user_profile_name_users_path,
-                    class: "form-control rounded",
-                      placeholder: t(".search_user") %>
+              <div class="col-sm-12 col-xl-9 mb-4 mb-xl-0">
+                <%= f.text_field :q, class: "form-control rounded",
+                  placeholder: t(".search_content"), id: "content-search" %>
               </div>
-              <div class="col-lg-12 col-xl-3 ml-auto text-right">
-                <%= f.submit t(".btn_search_user"),
+              <div class="col-sm-12 col-xl-3 ml-auto text-right">
+                <%= f.submit t(".search"),
                   class: "btn btn-primary btn-block rounded"%>
               </div>
             </div>

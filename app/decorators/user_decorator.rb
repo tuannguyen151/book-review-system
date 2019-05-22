@@ -49,4 +49,8 @@ class UserDecorator < Draper::Decorator
   def user_profile_address
     user_profile.address
   end
+
+  def avt_user
+    helpers.asset_path helpers.check_avatar(user_profile)
+  end
 end

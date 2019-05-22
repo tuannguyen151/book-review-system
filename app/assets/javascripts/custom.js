@@ -75,7 +75,7 @@ $(document).on("turbolinks:load", function () {
       return $(this).attr('data-score')
     }
   });
-  $(document).on("click", "#my-link", function(e) {
+  $(document).on("click", "#my-link", function (e) {
     $("#myDIV").css("display", "block");
     e.preventDefault();
   });
@@ -154,6 +154,10 @@ $(document).on("turbolinks:load", function () {
   $(".followers-search-form").on("keyup", function () {
     var user_id = $(this).data("user-id");
     $.getScript("/users/" + user_id + "/followers?name=" + this.value);
+  });
+
+  $("#content-search").on("keyup", function () {
+    $.getScript("/user_book_searches?q=" + this.value);
   });
 
 });

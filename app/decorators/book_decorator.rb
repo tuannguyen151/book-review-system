@@ -14,4 +14,8 @@ class BookDecorator < Draper::Decorator
     return false if object.reviews.where(user: h.current_user).blank?
     true
   end
+
+  def cover_image_asset
+    helpers.asset_path helpers.check_image_cover(object)
+  end
 end

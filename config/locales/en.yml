@@ -1,5 +1,6 @@
 en:
   js:
+    book: Book
     relationships:
       follow: Follow
       notification_follow: You have successfully followed user
@@ -67,10 +68,8 @@ en:
     site_blocks:
       title: Read, rate and request to buy book
       maxim: We will create wonderful experience for you!
-      search_book: what are you searching book for?
-      search_user: What are you want to search username?
-      btn_search_book: Search book
-      btn_search_user: Search user
+      search_content: Can you search by book title or user name?
+      search: Search
     statistical:
       users: Users
       books: Books
@@ -432,3 +431,8 @@ en:
       email: Email
       following: Following
       find_users_by_name: Find users by name
+  user_book_searches:
+    index:
+      book: Book search results
+      user: User search results
+      search: Search results
