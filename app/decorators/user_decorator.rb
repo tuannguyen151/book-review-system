@@ -39,7 +39,7 @@ class UserDecorator < Draper::Decorator
   end
 
   def user_profile_birthday
-    l user_profile.birthday, format: :date
+    l(user_profile.birthday, format: :date) if user_profile.birthday
   end
 
   def user_profile_phone
