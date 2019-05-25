@@ -31,7 +31,7 @@ class BooksQuery
   end
 
   def minimal_rate_from rate_from
-    return relation unless rate_from.present?
+    return relation if rate_from.to_i == 0
     relation.where id: Review.select(:book_id).group(:book_id)
                              .having("avg(rate) >= ?", rate_from)
   end
