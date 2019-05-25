@@ -15,7 +15,8 @@ class BookDecorator < Draper::Decorator
   end
 
   def review_of_current_user?
-    return false if object.reviews.where(user: h.current_user).blank?
+    return false if h.current_user && object.reviews
+                                            .where(user: h.current_user).blank?
     true
   end
 
