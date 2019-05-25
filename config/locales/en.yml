@@ -152,6 +152,7 @@ en:
   books:
     index:
       list_books: List books
+      filter: Filter
     new:
       create_new_book: Create new book
       create: Create
@@ -204,6 +205,14 @@ en:
       author: Author
       price: Price
       edit: Edit
+    book_filter_form:
+      category: Category
+      title: Title
+      author: Author
+      minimal_price: Minimal price
+      maximal_price: Maximal price
+      minimal_rate: Minimal rate
+      filter: Filter
   users:
     unfollow:
       unfollow: Unfollow

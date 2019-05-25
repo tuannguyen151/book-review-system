@@ -1,0 +1,42 @@
+<%= form_with url: book_filters_path, class: "row",
+  method: :get do |f| %>
+
+  <div class="col-md-3 mt-3">
+    <%= f.label t(".category") %>
+    <%= f.text_field :category, list: :categories,
+      class: "form-control" %>
+    <datalist id="categories">
+      <%= options_for_select @categories %>
+    </datalist>
+  </div>
+
+  <div class="col-md-6 mt-3">
+    <%= f.label t(".title") %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="col-md-3 mt-3">
+    <%= f.label t(".author") %>
+    <%= f.text_field :author, class: "form-control" %>
+  </div>
+
+  <div class="col-md-3 mt-3">
+    <%= f.label t(".minimal_price") %>
+    <%= f.text_field :price_from, class: "form-control" %>
+  </div>
+
+  <div class="col-md-3 mt-3">
+    <%= f.label t(".maximal_price") %>
+    <%= f.text_field :price_to, class: "form-control" %>
+  </div>
+
+  <div class="col-md-6 mt-3">
+    <%= f.label t(".minimal_rate") %>
+    <%= f.range_field :rate_from, value: 0, min: 0, max: 5 %>
+  </div>
+
+  <div class="mt-3 mb-3 col-md-3">
+    <%= f.submit t(".filter"), class: "btn btn-primary btn-block" %>
+  </div>
+
+<% end %>

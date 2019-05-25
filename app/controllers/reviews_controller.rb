@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
     @review = ReviewsService.new(
       review_params: review_params, user: current_user, book: @book
     ).builder
+    @review = ReviewDecorator.decorate @review
     respond_to do |format|
       if @review.save
         flash[:success] = t ".create_success"

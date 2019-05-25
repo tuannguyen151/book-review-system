@@ -1,14 +1,15 @@
 class ReviewsService
-  def initialize params
-    @review_params = params[:review_params]
+  attr_reader :params
+
+  def initialize params = {}
+    @params = params[:review_params]
     @user = params[:user]
     @book = params[:book]
   end
 
   def builder
-    review = Review.new @review_params
-    review.user = @user
-    review.book = @book
-    ReviewDecorator.decorate review
+    params[:user] = @user
+    params[:book] = @book
+    Review.new params
   end
 end

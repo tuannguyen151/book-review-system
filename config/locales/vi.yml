@@ -152,6 +152,7 @@ vi:
   books:
     index:
       list_books: Danh sách sách
+      filter: Lọc
     new:
       create_new_book: Tạo sách mới
       create: Tạo
@@ -204,6 +205,14 @@ vi:
       author: Tác giả
       price: Giá
       edit: Sửa
+    book_filter_form:
+      category: Danh mục
+      title: Tiêu đề
+      author: Tác giả
+      minimal_price: Giá tối thiểu
+      maximal_price: Giá tối đa
+      minimal_rate: Đánh giá tối thiểu
+      filter: Lọc
   users:
     unfollow:
       unfollow: Huỷ theo dõi

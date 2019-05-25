@@ -9,6 +9,19 @@
         </h2>
       </div>
     </div>
+
+    <div class="row mt-2">
+      <div class="toggle">
+        <span id="toggle-filter" class="h4 text-warning m-3">
+          <%= t ".filter" %>
+          <i class="fas fa-toggle-off"></i>
+        </span>
+      </div>
+      <div class="col-md-12 book-filters hidden m-3 bg-white">
+        <%= render "book_filter_form" %>
+      </div>
+    </div>
+
     <div class="row mt-5" id="list-books">
       <%= render @books %>
     </div>

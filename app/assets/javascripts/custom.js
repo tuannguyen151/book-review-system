@@ -160,4 +160,15 @@ $(document).on("turbolinks:load", function () {
     $.getScript("/user_book_searches?q=" + this.value);
   });
 
+  $("#toggle-filter").on("click", function () {
+    $(this).find("i").toggleClass("fa-toggle-off");
+    $(this).find("i").toggleClass("fa-toggle-on");
+    var filter = $(".book-filters");
+    if (filter.css("display") === "none") {
+      filter.fadeIn();
+    } else {
+      filter.fadeOut();
+    }
+  });
+
 });

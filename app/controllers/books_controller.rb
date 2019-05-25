@@ -5,7 +5,8 @@ class BooksController < ApplicationController
   before_action :admin?, only: %i(new create edit update destroy)
 
   def index
-    @books = Book.includes(:category).page(params[:page])
+    @categories = Category.all.pluck :name
+    @books = Book.includes(:category, :markers).page(params[:page])
                  .per Settings.book_in_page
   end
 

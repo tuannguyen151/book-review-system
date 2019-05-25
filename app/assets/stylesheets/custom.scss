@@ -527,3 +527,15 @@ li.ui-menu-item {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+.range-output::after {
+  content: url("star-on.png");
+}
+
+.hidden {
+  display: none;
+}
+
+.toggle {
+  cursor: pointer;
+}
