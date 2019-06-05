@@ -25,12 +25,13 @@
 
     <div class="row mt-5">
       <div class="col-md-12">
-
         <div id="follow-form">
           <%= @user.relationship_form current_user %>
         </div>
+      </div>
 
-        <div class="col-md-4 pl-0 pt-3 pb-3 mt-3">
+      <div class="col-md-4">
+        <div class="col-md-12 pl-0 pt-3 pb-3 mt-3">
           <div class="row m-0 pt-3 bg-white">
             <div class="border-dark mb-3 pb-1 col-md-12">
               <h3 class="text-dark font-weight-bold">
@@ -94,7 +95,8 @@
             <div class="border-dark mb-3 pb-1 col-md-12">
               <h3 class="text-dark font-weight-bold">
                 <%= image_tag "svg/follow.svg", class: "height-30" %>
-                <%= link_to user_following_index_path(@user) do %>
+                <%= link_to "#", id: "get-following",
+                  data: {user_id: @user.id} do %>
                   <%= @user.count_following %> <%= t ".following" %>
                 <% end %>
               </h3>
@@ -119,8 +121,13 @@
           </div>
 
         </div>
-
       </div>
+
+      <div class="col-md-8">
+        <div class="col-md-12 pr-0 pl-0 pt-3 pb-3 mt-3" id="following">
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
