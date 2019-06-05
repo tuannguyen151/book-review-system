@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => "/ckeditor"
   namespace :api, {format: "json"} do
     namespace :v1 do
-      resources :users do
+      resources :users, only: %i(index) do
         resources :following, only: :index
       end
     end
