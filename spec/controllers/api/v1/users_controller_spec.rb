@@ -30,4 +30,17 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       expect(parse_json["status"]).to eq 404
     end
   end
+
+  describe "GET #show" do
+    it "responds to json by default" do
+      get :show, params: {id: user.id, format: :json}
+      expect(response.content_type).to eq "application/json"
+    end
+
+    it "user not found" do
+      get :show, params: {id: 1, format: :json}
+      parse_json = JSON(response.body)
+      expect(parse_json["status"]).to eq 404
+    end
+  end
 end

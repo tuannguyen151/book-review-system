@@ -11,9 +11,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  rescue_from ActiveRecord::RecordNotFound,
-    with: :render_record_not_found_response
-
   private
 
   def set_locale
@@ -46,9 +43,5 @@ class ApplicationController < ActionController::Base
       user.permit :email, :password, :password_confirmation,
         user_profile_attributes: [:name, :birthday, :gender]
     end
-  end
-
-  def render_record_not_found_response error
-    render json: {message: error, status: 404}
   end
 end

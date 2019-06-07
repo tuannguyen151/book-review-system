@@ -1,4 +1,4 @@
-class Api::V1::FollowingController < ApplicationController
+class Api::V1::FollowingController < Api::V1::ApiController
   before_action :find_user
 
   def index
