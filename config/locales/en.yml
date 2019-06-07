@@ -1,4 +1,15 @@
 en:
+  api:
+    v1:
+      not_authenticated: You are not authenticated
+      email_not_found: Email not found!
+      sessions:
+        create:
+          sign_in_failed: Sign in failed
+          signed_in_successfully: Signed in successfully
+        destroy:
+          unauthorization: Unauthorization
+          signed_out: Signed out
   js:
     book: Book
     relationships:

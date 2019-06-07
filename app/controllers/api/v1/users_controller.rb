@@ -1,13 +1,13 @@
 class Api::V1::UsersController < Api::V1::ApiController
   before_action :get_user, only: :show
+  skip_before_action :authenticate_user_from_token
 
   def index
     @users = User.where(admin: false).includes :user_profile
     @users = Api::V1::UserDecorator.decorate_collection @users
   end
 
-  def show
-  end
+  def show; end
 
   private
 
