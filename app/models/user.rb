@@ -19,6 +19,7 @@ class User < ApplicationRecord
   end)
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
     :recoverable, :rememberable, :validatable
+  acts_as_token_authenticatable
   accepts_nested_attributes_for :user_profile
 
   def recent_activities limit
