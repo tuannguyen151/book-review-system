@@ -13,4 +13,8 @@ class Api::V1::BookDecorator < Draper::Decorator
   def category_name
     object.category.name
   end
+
+  def category_id
+    object.category.id
+  end
 end

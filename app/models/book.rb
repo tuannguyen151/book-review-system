@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  BOOK_PARAMS = %i(title cover_image description number_pages
+    publish_date price author category_id).freeze
   AUTHORIZE_ADMIN = %w(update delete).freeze
 
   belongs_to :category

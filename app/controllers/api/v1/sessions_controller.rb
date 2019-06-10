@@ -7,6 +7,7 @@ class Api::V1::SessionsController < Devise::SessionsController
     return render json: {message: t(".sign_in_failed")} unless
       @user.valid_password? user_params[:password]
     sign_in @user, store: false
+    @user.reset_authentication_token! unless @user.authentication_token?
   end
 
   def destroy

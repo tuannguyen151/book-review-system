@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     namespace :api, {format: "json"} do
       namespace :v1 do
+        namespace :admin do
+          resources :books, only: :create
+        end
         devise_scope :user do
           post "sign_in", to: "sessions#create"
           delete "sign_out", to: "sessions#destroy"
