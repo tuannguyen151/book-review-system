@@ -1,6 +1,7 @@
 en:
   api:
     v1:
+      forbidden: You are forbidden!
       not_authenticated: You are not authenticated
       email_not_found: Email not found!
       sessions:
