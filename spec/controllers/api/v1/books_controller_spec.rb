@@ -1,6 +1,13 @@
 RSpec.describe Api::V1::BooksController, type: :controller do
   let(:book) {FactoryBot.create :book}
 
+  describe "GET #index" do
+    it "success" do
+      get :index, format: :json
+      expect(response).to have_http_status :success
+    end
+  end
+
   describe "GET #show" do
     it "success" do
       get :show, params: {id: book.id}, format: :json

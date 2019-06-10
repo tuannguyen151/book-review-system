@@ -11,7 +11,7 @@ Rails.application.routes.draw do
           resources :following, only: :index
           resources :user_profiles, only: :update
         end
-        resources :books, only: :show
+        resources :books, only: %i(index show)
       end
     end
     root "home#index"
