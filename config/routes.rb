@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => "/ckeditor"
-  namespace :api, {format: "json"} do
-    namespace :v1 do
-      resources :users, only: %i(index show) do
-        resources :following, only: :index
+  scope "(:locale)", locale: /en|vi/ do
+    namespace :api, {format: "json"} do
+      namespace :v1 do
+        devise_scope :user do
+          post "sign_in", to: "sessions#create"
+          delete "sign_out", to: "sessions#destroy"
+        end
+        resources :users, only: %i(index show) do
+          resources :following, only: :index
+          resources :user_profiles, only: :update
+        end
       end
     end
-  end
-  scope "(:locale)", locale: /en|vi/ do
     root "home#index"
     devise_for :users, controllers: {sessions: "users/sessions", registrations: "registrations"},
       path: "", path_names: {edit: "change_password", sign_up: "register"}

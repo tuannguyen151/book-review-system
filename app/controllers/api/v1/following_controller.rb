@@ -1,5 +1,6 @@
 class Api::V1::FollowingController < Api::V1::ApiController
   before_action :find_user
+  skip_before_action :authenticate_user_from_token
 
   def index
     @users = @user.following

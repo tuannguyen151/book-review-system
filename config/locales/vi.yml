@@ -1,4 +1,15 @@
 vi:
+  api:
+    v1:
+      not_authenticated: Bạn chưa xác thực
+      email_not_found: Không tìm thấy email!
+      sessions:
+        create:
+          sign_in_failed: Đăng nhập thất bại
+          signed_in_successfully: Đăng nhập thành công
+        destroy:
+          unauthorization: Không xác thực
+          signed_out: Đã đăng xuất
   js:
     book: Sách
     relationships:

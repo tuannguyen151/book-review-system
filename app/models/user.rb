@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  USER_PARAMS = %i(email password).freeze
   has_one :user_profile, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: "follower_id", dependent: :destroy
@@ -24,5 +25,9 @@ class User < ApplicationRecord
 
   def recent_activities limit
     activities.order("created_at DESC").limit limit
+  end
+
+  def reset_authentication_token!
+    update_column :authentication_token, Devise.friendly_token
   end
 end
