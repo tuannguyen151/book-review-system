@@ -1,4 +1,5 @@
 class UserProfile < ApplicationRecord
+  USER_PROFILE_PARAMS = %i(avatar_url name gender birthday phone address).freeze
   enum gender: {female: 0, male: 1}
 
   belongs_to :user
