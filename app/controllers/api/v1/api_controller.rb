@@ -5,6 +5,7 @@ class Api::V1::ApiController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound,
     with: :render_record_not_found_response
   rescue_from Exceptions::Unauthorization, with: :render_not_authenticated
+  rescue_from ActiveRecord::RecordInvalid, with: :render_record_invalid
 
   private
 
@@ -25,5 +26,9 @@ class Api::V1::ApiController < ApplicationController
 
   def render_not_authenticated error
     render json: {message: error}, status: 401
+  end
+
+  def render_record_invalid error
+    render json: {message: error}, status: 400
   end
 end
