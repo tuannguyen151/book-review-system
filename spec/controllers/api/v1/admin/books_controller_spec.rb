@@ -79,4 +79,24 @@ RSpec.describe Api::V1::Admin::BooksController, type: :controller do
       end
     end
   end
+
+  describe "DELETE #destroy" do
+    it "success" do
+      delete :destroy, params: {id: book.id}, format: :json
+      expect(response).to have_http_status 200
+    end
+
+    context "failure" do
+      it "not found" do
+        delete :destroy, params: {id: 1}, format: :json
+        expect(response).to have_http_status 404
+      end
+
+      it "Unauthorization" do
+        request.headers["Authorization"] = nil
+        delete :destroy, params: {id: book.id}, format: :json
+        expect(response).to have_http_status 401
+      end
+    end
+  end
 end
