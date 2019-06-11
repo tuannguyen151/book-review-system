@@ -4,6 +4,10 @@ en:
       forbidden: You are forbidden!
       not_authenticated: You are not authenticated
       email_not_found: Email not found!
+      admin:
+        books:
+          destroy:
+            deleted_successfully: Deleted successfully
       sessions:
         create:
           sign_in_failed: Sign in failed
