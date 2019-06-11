@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       namespace :v1 do
         namespace :admin do
           resources :books, only: %i(create update destroy)
+          resources :categories, except: %i(new edit)
         end
         devise_scope :user do
           post "sign_in", to: "sessions#create"
