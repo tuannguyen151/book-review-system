@@ -8,6 +8,13 @@ en:
         books:
           destroy:
             deleted_successfully: Deleted successfully
+        categories:
+          create:
+            created_successfully: Create successfully!
+          update:
+            updated_successfully: Updated successfully!
+          destroy:
+            deleted_successfully: Deleted successfully!
       sessions:
         create:
           sign_in_failed: Sign in failed
