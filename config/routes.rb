@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :api, {format: "json"} do
       namespace :v1 do
         namespace :admin do
-          resources :books, only: :create
+          resources :books, only: %i(create update)
         end
         devise_scope :user do
           post "sign_in", to: "sessions#create"
