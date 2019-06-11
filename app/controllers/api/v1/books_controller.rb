@@ -1,5 +1,5 @@
 class Api::V1::BooksController < Api::V1::ApiController
-  skip_before_action :authenticate_user_from_token, only: %i(index show)
+  skip_before_action :authorize_request, only: %i(index show)
   before_action :get_book, only: :show
 
   def index

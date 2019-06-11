@@ -1,6 +1,6 @@
 class Api::V1::UsersController < Api::V1::ApiController
   before_action :get_user, only: :show
-  skip_before_action :authenticate_user_from_token
+  skip_before_action :authorize_request
 
   def index
     @users = User.where(admin: false).includes :user_profile

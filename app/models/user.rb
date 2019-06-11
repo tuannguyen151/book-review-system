@@ -27,7 +27,7 @@ class User < ApplicationRecord
     activities.order("created_at DESC").limit limit
   end
 
-  def reset_authentication_token!
-    update_column :authentication_token, Devise.friendly_token
+  def current_user? user
+    self == user
   end
 end
