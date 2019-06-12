@@ -1,20 +1,17 @@
 class Api::V1::SessionsController < Devise::SessionsController
-  before_action :load_user_authentication
+  before_action :load_user_authentication, only: :create
   skip_before_action :verify_authenticity_token
-  skip_before_action :authenticate_user_from_token
+  skip_before_action :authorize_request, only: :create
 
   def create
     return render json: {message: t(".sign_in_failed")} unless
-      @user.valid_password? user_params[:password]
-    sign_in @user, store: false
-    @user.reset_authentication_token! unless @user.authentication_token?
+      @user.valid_password?(params[:password])
+    token = generate_and_update_authentication_token @user, Settings.exp_token
+    render json: {message: t(".signed_in_successfully"), token: token}
   end
 
   def destroy
-    raise Exceptions::Unauthorization, t(".unauthorization") unless
-      @user.authentication_token == request.headers["Authorization"]
-    @user.reset_authentication_token!
-    sign_out @user
+    generate_and_update_authentication_token current_user, Time.now.to_i
     render json: {message: t(".signed_out")}
   end
 
