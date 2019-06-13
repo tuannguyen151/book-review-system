@@ -22,6 +22,13 @@ en:
         destroy:
           unauthorization: Unauthorization
           signed_out: Signed out
+      reviews:
+          create:
+            created_successfully: Create successfully!
+          update:
+            updated_successfully: Updated successfully!
+          destroy:
+            deleted_successfully: Deleted successfully!
   js:
     book: Book
     relationships:
